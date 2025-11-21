@@ -1,0 +1,1 @@
+Manera provicional de poder compartir un estilo de un xml y un html

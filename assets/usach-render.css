@@ -1,0 +1,651 @@
+/* === COLORES INSTITUCIONALES === */
+:root {
+    --usach-azul-gris: #394049;
+    --usach-naranja: #EA7600;
+    --usach-verde: #00A499;
+    --usach-gris-claro: #F5F5F5;
+    --usach-gris-medio: #CCCCCC;
+    --usach-negro: #222222;
+    --usach-blanco: #FFFFFF;
+}
+
+/* === XML === */
+
+/* === Contenedor general === */
+.render-usach Videoclase {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 2em;
+    font-family: "Roboto", "Open Sans", sans-serif;
+    color: var(--usach-azul-gris);
+    background-color: var(--usach-gris-claro);
+    transition: transform 0.6s ease;
+}
+
+.render-usach Metadatos {
+    display: none;
+}
+
+/* === Estructura de Diapositiva === */
+.render-usach Diapositiva {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 2em 3em;
+    margin-bottom: 20px;
+    position: relative;
+    background: var(--usach-blanco)
+    url('/templates/fondo01usach-fing.png') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.render-usach Diapositiva[titulo]::before {
+    content: attr(titulo);
+    display: block;
+    margin-bottom: 1.5em;
+    text-align: center;
+    width: 100%;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--usach-verde);
+}
+
+/* === INDIVIDUAL === */
+.render-usach Diapositiva[disposicion="individual"] {
+    display: grid;
+    grid-template-areas:
+        "titulo"
+        "region1";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="individual"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="individual"] region:nth-of-type(1) {
+    grid-area: region1;
+}
+
+/* === DUO HORIZONTAL === */
+/* 1 = arriba, 2 = abajo */
+.render-usach Diapositiva[disposicion="duo-horizontal"] {
+    display: grid;
+    grid-template-areas:
+        "titulo"
+        "region1"
+        "region2";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="duo-horizontal"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="duo-horizontal"] region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva[disposicion="duo-horizontal"] region:nth-of-type(2) { grid-area: region2; }
+
+/* === DUO === */
+/* 1 = izquierda, 2 = derecha */
+.render-usach Diapositiva[disposicion="duo"] {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "region1 region2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="duo"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(2) { grid-area: region2; }
+
+/* === TRIO HORIZONTAL ABAJO === */
+.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "region1 region2"
+        "region3 region3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="trio-horizontal-abajo"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] region:nth-of-type(2) { grid-area: region2; }
+.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] region:nth-of-type(3) { grid-area: region3; }
+
+/* === TRIO HORIZONTAL ARRIBA === */
+.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "region1 region1"
+        "region2 region3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="trio-horizontal-arriba"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] region:nth-of-type(2) { grid-area: region2; }
+.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] region:nth-of-type(3) { grid-area: region3; }
+
+/* === TRIO VERTICAL IZQUIERDA === */
+.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "region1 region2"
+        "region1 region3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="trio-vertical-izquierda"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] region:nth-of-type(2) { grid-area: region2; }
+.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] region:nth-of-type(3) { grid-area: region3; }
+
+/* === TRIO VERTICAL DERECHA === */
+.render-usach Diapositiva[disposicion="trio-vertical-derecha"] {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "region1 region3"
+        "region2 region3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="trio-vertical-derecha"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="trio-vertical-derecha"] region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva[disposicion="trio-vertical-derecha"] region:nth-of-type(2) { grid-area: region2; }
+.render-usach Diapositiva[disposicion="trio-vertical-derecha"] region:nth-of-type(3) { grid-area: region3; }
+
+/* === CUARTETO === */
+.render-usach Diapositiva[disposicion="cuarteto"] {
+    display: grid;
+    grid-template-areas:
+        "titulo titulo"
+        "region1 region2"
+        "region3 region4";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 1em;
+}
+.render-usach Diapositiva[disposicion="cuarteto"]::before {
+    grid-area: titulo;
+    text-align: center;
+}
+.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(2) { grid-area: region2; }
+.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(3) { grid-area: region3; }
+.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(4) { grid-area: region4; }
+
+/* === Regiones === */
+.render-usach region {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(57, 64, 73, 0.2);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: inset 0 0 4px rgba(57, 64, 73, 0.15);
+    backdrop-filter: blur(4px);
+}
+.render-usach region[justificacion="izquierda"] { justify-content: flex-start; }
+.render-usach region[justificacion="centro"] { justify-content: center; }
+.render-usach region[justificacion="derecha"] { justify-content: flex-end; }
+
+/* === Texto === */
+.render-usach texto {
+    display: block;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0.5em 0;
+    color: var(--usach-azul-gris);
+}
+.render-usach subtitulo {
+    display: block;
+    font-weight: bold;
+    color: var(--usach-naranja);
+    margin: 0.8em 0;
+    font-size: 1.2em;
+}
+
+/* === Listas === */
+.render-usach listaOrdenada {
+    display: block;
+    counter-reset: item; /* Inicia contador */
+    margin: 1em 2em;
+    font-size: 1em;
+}
+
+.render-usach listaOrdenada item {
+    display: block;
+    counter-increment: item; /* Suma 1 por elemento */
+    margin: 0.4em 0;
+    color: var(--usach-azul-gris);
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.render-usach listaOrdenada item::before {
+    content: counter(item) ". ";
+    position: absolute;
+    left: 0;
+    color: var(--usach-naranja);
+    font-weight: 600;
+}
+
+/* Lista no ordenada */
+.render-usach listaNoOrdenada {
+    display: block;
+    margin: 1em 2em;
+    font-size: 1em;
+}
+
+.render-usach listaNoOrdenada item {
+    display: block;
+    position: relative;
+    padding-left: 1.2em;
+    margin: 0.4em 0;
+}
+
+.render-usach listaNoOrdenada item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--usach-naranja);
+    font-weight: bold;
+}
+
+
+/* === Tablas === */
+.render-usach tabla {
+    display: table;
+    border-collapse: collapse;
+    margin: 1em auto;
+    font-size: 0.9em;
+    color: var(--usach-azul-gris);
+}
+.render-usach fila { display: table-row; }
+.render-usach celda {
+    display: table-cell;
+    padding: 0.6em 1.2em;
+    border: 1px solid var(--usach-gris-medio);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* === Imágenes === */
+.render-usach img {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 40;
+}
+
+/* === Código === */
+.render-usach codigo {
+    display: block;
+    padding: 1em;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    color: var(--usach-negro);
+    background: #f0f0f0;
+    border-left: 4px solid var(--usach-naranja);
+    border-radius: 6px;
+}
+
+/* === Preguntas y alternativas === */
+.render-usach pregunta {
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: var(--usach-azul-gris);
+    text-align: center;
+}
+.render-usach alternativas {
+    display: block;
+    margin-top: 1em;
+}
+.render-usach alternativa {
+    display: block;
+    margin: 0.4em 0;
+    padding: 0.75em;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid var(--usach-gris-medio);
+    transition: all 0.2s ease;
+    background-color: var(--usach-blanco);
+}
+
+.render-usach alternativa[correcto="true"] {
+    background-color: #a1dca1;
+    border: 1px solid #4caf50;
+}
+.render-usach qitem retroalimentacion {
+    display: block;
+    margin-top: 1em;
+    font-style: italic;
+    color: var(--usach-verde);
+}
+
+/* === Banco de preguntas === */
+.render-usach banco {
+    border: 2px dashed var(--usach-naranja);
+    background-color: rgba(250, 250, 250, 0.9);
+    padding: 1rem;
+    text-align: center;
+    color: var(--usach-azul-gris);
+    font-style: italic;
+    border-radius: 0.75rem;
+}
+.render-usach banco::before {
+    content: "Banco de preguntas (USACH)";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--usach-naranja);
+}
+
+.render-usach banco qitem {
+    display: block;
+}
+
+.render-usach banco qitem:not(:first-of-type) {
+    display: none;
+}
+
+/* === HTML === */
+
+/* ==========================================================
+Estructura general de slide
+========================================================== */
+.slide-section {
+height: 100dvh;
+}
+
+
+.slide-container {
+display: flex;
+flex-direction: column;
+height: 100%;
+}
+
+
+/* ---------------------------
+Header / título de slide
+--------------------------- */
+.slide-header {
+height: 10%;
+display: flex;
+justify-content: center;
+align-items: center;
+color: var(--usach-blanco);
+background-color: rgba(43, 60, 90, 0.65);
+border-bottom: 2px solid var(--usach-azul-gris);
+}
+
+
+/* ---------------------------
+Cuerpo general del slide
+--------------------------- */
+.slide-body {
+flex: 1;
+}
+
+
+.slide-body--duo,
+.slide-body--duo-horizontal,
+.slide-body--individual,
+.slide-body--cuarteto,
+.slide-body--trio-horizontal-abajo,
+.slide-body--trio-horizontal-arriba,
+.slide-body--trio-vertical-izquierda,
+.slide-body--trio-vertical-derecha {
+height: 90%;
+gap: 1rem;
+}
+
+/* ---------------------------
+Disposición DUO vertical
+--------------------------- */
+.slide-body--duo {
+display: flex;
+}
+
+
+/* DUO horizontal */
+.slide-body--duo-horizontal {
+display: flex;
+flex-direction: column;
+}
+
+
+/* INDIVIDUAL */
+.slide-body--individual {
+display: flex;
+flex-direction: column;
+}
+
+
+/* CUARTETO */
+.slide-body--cuarteto {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+}
+
+
+/* ---------------------------
+TRIO Horizontal (arriba o abajo)
+--------------------------- */
+.slide-body--trio-horizontal-abajo,
+.slide-body--trio-horizontal-arriba {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+grid-auto-rows: 1fr;
+}
+
+
+.slide-body--trio-horizontal-abajo > .slide-region-wrapper:nth-child(3) {
+grid-column: 1 / 3;
+}
+
+
+.slide-body--trio-horizontal-arriba > .slide-region-wrapper:nth-child(1) {
+grid-column: 1 / 3;
+}
+
+/* ---------------------------
+TRIO vertical izquierda/derecha
+--------------------------- */
+.slide-body--trio-vertical-izquierda,
+.slide-body--trio-vertical-derecha {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+padding: 0 2rem;
+box-sizing: border-box;
+}
+
+
+/* IZQUIERDA */
+.slide-body--trio-vertical-izquierda {
+grid-template-areas:
+"region1 region2"
+"region1 region3";
+}
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(1) { grid-area: region1; }
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(2) { grid-area: region2; }
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(3) { grid-area: region3; }
+
+
+/* DERECHA */
+.slide-body--trio-vertical-derecha {
+grid-template-areas:
+"region2 region1"
+"region3 region1";
+}
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(1) { grid-area: region1; }
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(2) { grid-area: region2; }
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(3) { grid-area: region3; }
+
+
+/* ---------------------------
+Wrapper de región
+--------------------------- */
+.slide-region-wrapper {
+flex: 1;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+background-color: rgba(255,255,255,0.65);
+border-radius: 6px;
+border: 1px solid var(--usach-gris-medio);
+}
+
+
+/* ---------------------------
+Región interna
+--------------------------- */
+.region {
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+}
+
+.region--izquierda { text-align: left; align-items: flex-start; }
+.region--centrado { text-align: center; align-items: center; }
+
+
+.region__texto,
+.region__subtitulo,
+.region__lista,
+.region__tabla-descripcion {
+width: 100%;
+text-align: inherit;
+}
+
+
+.region__subtitulo {
+font-weight: bold;
+color: var(--usach-naranja);
+}
+
+
+/* ---------------------------
+Código
+--------------------------- */
+pre {
+padding: 1em 1.5em;
+background-color: var(--usach-gris-claro);
+border-left: 6px solid var(--usach-naranja);
+overflow-x: auto;
+}
+
+
+/* ---------------------------
+Listas
+--------------------------- */
+.region__lista {
+margin-left: 1.5em;
+margin-bottom: 1em;
+}
+
+
+/* ---------------------------
+Tablas
+--------------------------- */
+.region__tabla-wrapper {
+width: 100%;
+overflow-x: auto;
+}
+
+
+.region__tabla {
+border: 1px solid var(--usach-gris-medio);
+border-collapse: collapse;
+width: 100%;
+min-width: 300px;
+}
+
+
+.region__tabla td {
+text-align: center;
+font-size: 0.9em;
+border: 1px solid var(--usach-gris-medio);
+}
+
+
+.region__tabla td:first-child {
+background: var(--usach-verde);
+color: var(--usach-blanco);
+font-weight: bold;
+}
+
+
+/* ---------------------------
+Imágenes
+--------------------------- */
+.region__imagen-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+
+
+.region__imagen {
+max-width: 100%;
+max-height: 70%;
+object-fit: contain;
+}
+
+
+/* ---------------------------
+Quizz
+--------------------------- */
+.quizz {
+height: 100dvh;
+}
