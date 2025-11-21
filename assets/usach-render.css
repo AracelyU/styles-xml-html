@@ -395,6 +395,8 @@ Estructura general de slide
 ========================================================== */
 .slide-section {
     height: 100dvh;
+    background: var(--usach-blanco) url('./templates/fondo01usach-fing.png') no-repeat center center;
+    background-size: cover;
 }
 
 
@@ -402,8 +404,6 @@ Estructura general de slide
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: var(--usach-blanco) url('./templates/fondo01usach-fing.png') no-repeat center center;
-    background-size: cover;
 }
 
 /* ---------------------------
@@ -414,7 +414,13 @@ Header / título de slide
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--usach-verde);
 }
+
+.slide-header h3 {
+    color: var(--usach-verde);
+}
+
 
 
 /* ---------------------------
@@ -622,6 +628,26 @@ pre {
 .region__lista {
     margin-left: 1.5em;
     margin-bottom: 1em;
+}
+
+/* Texto de las listas: negro */
+.region__lista li {
+    color: #000; /* texto negro */
+    margin: 0.4em 0;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+/* Números en listas ordenadas: naranja */
+.region__lista li::marker {
+    color: var(--usach-naranja);
+    font-weight: 600;
+}
+
+/* Puntos en listas no ordenadas: naranja */
+.region__lista ul li::marker {
+    color: var(--usach-naranja);
+    font-weight: bold;
 }
 
 /* ------------------
