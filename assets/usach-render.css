@@ -393,15 +393,14 @@
 /* ==========================================================
 Estructura general de slide
 ========================================================== */
-.reveal .slides section {
-    background: var(--usach-blanco)
-    url('./templates/fondo01usach-fing.png') no-repeat center center !important;
+
+.reveal .slide-section {
+    height: 100dvh;
+    background: var(--usach-blanco) url('./templates/fondo01usach-fing.png')
+                no-repeat center center !important;
     background-size: cover !important;
 }
 
-.slide-section {
-    height: 100dvh;
-}
 
 
 .slide-container {
