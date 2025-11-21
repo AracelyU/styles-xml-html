@@ -393,7 +393,7 @@
 /* ==========================================================
 Estructura general de slide
 ========================================================== */
-html, body {
+.reveal .slide-background-content {
     background: var(--usach-blanco) url('./templates/fondo01usach-fing.png')
                 no-repeat center center !important;
     background-size: cover !important;
@@ -401,12 +401,9 @@ html, body {
     padding: 0;
 }
 
-
 .slide-section {
     height: 100dvh;
 }
-
-
 
 .slide-container {
     display: flex;
