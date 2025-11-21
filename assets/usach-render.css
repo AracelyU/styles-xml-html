@@ -393,10 +393,17 @@
 /* ==========================================================
 Estructura general de slide
 ========================================================== */
+.reveal .slides section {
+    background: var(--usach-blanco)
+    url('./templates/fondo01usach-fing.png') no-repeat center center !important;
+    background-size: cover !important;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.20);
+    padding: 2rem 3rem;
+}
+
 .slide-section {
     height: 100dvh;
-    background: var(--usach-blanco) url('./templates/fondo01usach-fing.png') no-repeat center center;
-    background-size: cover;
 }
 
 
@@ -417,9 +424,12 @@ Header / título de slide
     color: var(--usach-verde);
 }
 
-.slide-header h3 {
-    color: var(--usach-verde);
+.reveal h1, 
+.reveal h2, 
+.reveal h3 {
+    color: var(--usach-verde) !important;
 }
+
 
 
 
@@ -630,22 +640,17 @@ pre {
     margin-bottom: 1em;
 }
 
-/* Texto de las listas: negro */
-.region__lista li {
-    color: #000; /* texto negro */
-    margin: 0.4em 0;
-    position: relative;
-    padding-left: 1.5em;
+.reveal ul li, 
+.reveal ol li {
+    color: var(--usach-azul-gris);
+    margin: 0.5em 0;
 }
 
-/* Números en listas ordenadas: naranja */
-.region__lista li::marker {
+.reveal ul li::marker {
     color: var(--usach-naranja);
-    font-weight: 600;
 }
 
-/* Puntos en listas no ordenadas: naranja */
-.region__lista ul li::marker {
+.reveal ol li::marker {
     color: var(--usach-naranja);
     font-weight: bold;
 }
