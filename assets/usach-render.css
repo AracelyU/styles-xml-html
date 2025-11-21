@@ -629,6 +629,31 @@ pre {
     overflow-x: auto;
 }
 
+/* Contenedor del bloque */
+.reveal pre {
+    background: #f0f0f0 !important;
+    border-left: 4px solid var(--usach-naranja);
+    border-radius: 6px;
+    padding: 1em 1.25em;
+    margin: 1em 0;
+    overflow-x: auto;
+}
+
+/* Estilo del código dentro */
+.reveal pre code {
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    color: var(--usach-negro) !important;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+/* Opcional: desactivar el tema oscuro de monokai */
+.reveal pre code.hljs {
+    background: transparent !important;
+}
+
+
 .region__lista {
     margin-left: 1.5em;
     margin-bottom: 1em;
