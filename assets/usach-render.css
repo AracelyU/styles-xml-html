@@ -397,9 +397,6 @@ Estructura general de slide
     background: var(--usach-blanco)
     url('./templates/fondo01usach-fing.png') no-repeat center center !important;
     background-size: cover !important;
-    border-radius: 1rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.20);
-    padding: 2rem 3rem;
 }
 
 .slide-section {
