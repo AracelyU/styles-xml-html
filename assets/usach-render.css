@@ -402,10 +402,9 @@ Estructura general de slide
     display: flex;
     flex-direction: column;
     height: 100%;
-    background: var(--usach-blanco)
-    url('./templates/fondo01usach-fing.png') no-repeat center center;
+    background: var(--usach-blanco) url('./templates/fondo01usach-fing.png') no-repeat center center;
+    background-size: cover;
 }
-
 
 /* ---------------------------
 Header / título de slide
@@ -415,121 +414,135 @@ Header / título de slide
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--usach-blanco);
-    background-color: rgba(43, 60, 90, 0.65);
-    border-bottom: 2px solid var(--usach-azul-gris);
 }
 
 
 /* ---------------------------
-Cuerpo general del slide
---------------------------- */
+    Cuerpo de slide (body) según disposición
+   ------------------------- */
 .slide-body {
     flex: 1;
 }
 
+.slide-body--duo {
+    display: flex;
+    height: 90%;
+}
 
-.slide-body--duo,
-.slide-body--duo-horizontal,
-.slide-body--individual,
-.slide-body--cuarteto,
-.slide-body--trio-horizontal-abajo,
-.slide-body--trio-horizontal-arriba,
-.slide-body--trio-vertical-izquierda,
-.slide-body--trio-vertical-derecha {
+.slide-body--duo-horizontal {
+    display: flex;
+    flex-direction: column;
     height: 90%;
     gap: 1rem;
 }
 
-/* ---------------------------
-Disposición DUO vertical
---------------------------- */
-.slide-body--duo {
-    display: flex;
-}
-
-
-/* DUO horizontal */
-.slide-body--duo-horizontal {
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* INDIVIDUAL */
 .slide-body--individual {
     display: flex;
     flex-direction: column;
+    height: 90%;
 }
 
-
-/* CUARTETO */
 .slide-body--cuarteto {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
 }
 
+/* --- TRIO ABAJO --- */
+.slide-body--trio-horizontal-abajo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
+    grid-auto-rows: 1fr;
+    padding-bottom: 1.5rem;
+    box-sizing: border-box;
+}
 
-/* ---------------------------
-TRIO Horizontal (arriba o abajo)
---------------------------- */
-.slide-body--trio-horizontal-abajo,
+.slide-body--trio-horizontal-abajo > .slide-region-wrapper:nth-child(3) {
+    grid-column: 1 / 3; 
+}
+
+/* --- TRIO ARRIBA --- */
 .slide-body--trio-horizontal-arriba {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
     grid-auto-rows: 1fr;
+    padding-bottom: 1.5rem;
+    box-sizing: border-box;
 }
-
-
-.slide-body--trio-horizontal-abajo > .slide-region-wrapper:nth-child(3) {
-    grid-column: 1 / 3;
-}
-
 
 .slide-body--trio-horizontal-arriba > .slide-region-wrapper:nth-child(1) {
-    grid-column: 1 / 3;
+    grid-column: 1 / 3; 
 }
 
-/* ---------------------------
-TRIO vertical izquierda/derecha
---------------------------- */
-.slide-body--trio-vertical-izquierda,
-.slide-body--trio-vertical-derecha {
+/* -------------------------------
+    Disposición TRIO (vertical izquierda / derecha)
+   ------------------------------ */
+
+/* Izquierda: una columna alta a la izquierda, dos filas apiladas a la derecha */
+.slide-body--trio-vertical-izquierda {
     display: grid;
+    grid-template-areas:
+        "region1 region2"
+        "region1 region3";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
     padding: 0 2rem;
     box-sizing: border-box;
 }
 
-
-/* IZQUIERDA */
-.slide-body--trio-vertical-izquierda {
-    grid-template-areas:
-    "region1 region2"
-    "region1 region3";
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(1) {
+    grid-area: region1;
 }
-.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(1) { grid-area: region1; }
-.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(2) { grid-area: region2; }
-.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(3) { grid-area: region3; }
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(2) {
+    grid-area: region2;
+}
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(3) {
+    grid-area: region3;
+}
 
-
-/* DERECHA */
+/* Derecha: una columna alta a la derecha, dos filas apiladas a la izquierda */
 .slide-body--trio-vertical-derecha {
+    display: grid;
     grid-template-areas:
-    "region2 region1"
-    "region3 region1";
+        "region2 region1"
+        "region3 region1";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
-.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(1) { grid-area: region1; }
-.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(2) { grid-area: region2; }
-.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(3) { grid-area: region3; }
 
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(1) {
+    grid-area: region1;
+}
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(2) {
+    grid-area: region2;
+}
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(3) {
+    grid-area: region3;
+}
+
+/* Padding específico para wrappers de región en trios */
+.slide-body--trio-vertical-izquierda .slide-region-wrapper,
+.slide-body--trio-vertical-derecha .slide-region-wrapper {
+    padding: 1.5rem;
+}
 
 /* ---------------------------
-Wrapper de región
---------------------------- */
+    Wrapper de cada región
+   --------------------------- */
 .slide-region-wrapper {
     flex: 1;
     padding: 10px;
@@ -537,26 +550,56 @@ Wrapper de región
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: none;
     overflow: hidden;
-    background-color: rgba(255,255,255,0.65);
-    border-radius: 6px;
-    border: 1px solid var(--usach-gris-medio);
 }
 
-
 /* ---------------------------
-Región interna
---------------------------- */
+    Elementos y región
+   --------------------------- */
 .region {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
 }
 
-.region--izquierda { text-align: left; align-items: flex-start; }
-.region--centrado { text-align: center; align-items: center; }
+/* Disposición: DUO */
+.region--duo {
+    height: 100%;
+}
 
+/* Disposición: DUO-HORIZONTAL, TRIOs */
+.region--duo-horizontal,
+.region--trio-horizontal-arriba,
+.region--trio-horizontal-abajo {
+    width: 100%;
+    height: 100%;
+}
+
+/* Modificadores de alineación */
+.region--izquierda {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.region--derecha {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.region--centrado {
+    align-items: center;
+    text-align: center;
+}
+
+/* Elementos internos */
+.region__subtitulo {
+    font-weight: bold;
+}
+
+.region__texto {
+    margin-bottom: 1em;
+}
 
 .region__texto,
 .region__subtitulo,
@@ -566,87 +609,166 @@ Región interna
     text-align: inherit;
 }
 
-
-.region__subtitulo {
-    font-weight: bold;
-    color: var(--usach-naranja);
-}
-
-
-/* ---------------------------
-Código
---------------------------- */
+/* ------------------
+    Código y listas
+   ------------------ */
 pre {
     padding: 1em 1.5em;
-    background-color: var(--usach-gris-claro);
-    border-left: 6px solid var(--usach-naranja);
+    margin: 1em 0;
+    background-color: #282c24;
     overflow-x: auto;
 }
 
-
-/* ---------------------------
-Listas
---------------------------- */
 .region__lista {
     margin-left: 1.5em;
     margin-bottom: 1em;
 }
 
-
-/* ---------------------------
-Tablas
---------------------------- */
+/* ------------------
+    Tablas
+   ------------------ */
 .region__tabla-wrapper {
     width: 100%;
     overflow-x: auto;
 }
 
-
 .region__tabla {
-    border: 1px solid var(--usach-gris-medio);
+    border: 1px solid #000;
     border-collapse: collapse;
     width: 100%;
     min-width: 300px;
 }
 
-
 .region__tabla td {
     text-align: center;
     font-size: 0.9em;
-    border: 1px solid var(--usach-gris-medio);
+    border: 1px solid #000;
 }
 
-
-.region__tabla td:first-child {
-    background: var(--usach-verde);
-    color: var(--usach-blanco);
-    font-weight: bold;
+.region__tabla .td--duo {
+    padding: 5px;
 }
 
+.region__tabla-descripcion {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+}
 
-/* ---------------------------
-Imágenes
---------------------------- */
+.region__tabla-descripcion--duo-horizontal,
+.region__tabla-descripcion--trio-horizontal-arriba,
+.region__tabla-descripcion--trio-horizontal-abajo {
+    margin: 0;
+}
+
+/* ------------------------------
+   IMÁGENES
+   ------------------------------ */
 .region__imagen-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Escala general del DUO / INDIVIDUAL / CUARTETO */
+.region__imagen-wrapper--duo,
+.region__imagen-wrapper--individual,
+.region__imagen-wrapper--cuarteto {
+    transform: scale(0.4) translateY(-60%);
+}
+
+/* TRIO centrado y equilibrado */
+.region__imagen-wrapper--trio-vertical-derecha,
+.region__imagen-wrapper--trio-vertical-izquierda {
+    justify-content: center;
+    transform: scale(0.33) translateY(-15%);
+}
+
+/* DUO HORIZONTAL */
+.region__imagen-wrapper--duo-horizontal {
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Imágenes internas */
+.region__imagen {
+    max-width: 100%;
+    max-height: 70%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Ajuste especial para trio-arriba y trio-abajo */
+.slide-body--trio-horizontal-abajo .region__imagen,
+.slide-body--trio-horizontal-arriba .region__imagen {
+    max-width: 90%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Altura coherente entre trios y duos */
+.region__imagen--trio-vertical-derecha,
+.region__imagen--trio-vertical-izquierda {
+    max-height: 65%;
+}
+
+.region__imagen-wrapper--individual {
+    transform: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Descripción de imagen */
+.region__imagen-descripcion {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+}
+
+/* ------------------------------
+   Ajuste de regiones TRIO
+   ------------------------------ */
+
+/* Centrado uniforme para las regiones del TRIO */
+.slide-body--trio-vertical-izquierda .slide-region-wrapper,
+.slide-body--trio-vertical-derecha .slide-region-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     overflow: hidden;
+    height: 100%;
 }
 
-
-.region__imagen {
-    max-width: 100%;
-    max-height: 70%;
-    object-fit: contain;
+/* Fuerza filas iguales */
+.slide-body--trio-vertical-izquierda,
+.slide-body--trio-vertical-derecha {
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
 }
 
-/* ---------------------------
-Quizz
---------------------------- */
+/* Centrado interno consistente */
+.slide-body--trio-vertical-izquierda .region,
+.slide-body--trio-vertical-derecha .region {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* ------------------------------
+   Quizz interactivo
+   ------------------------------ */
 .quizz {
     height: 100dvh;
 }
