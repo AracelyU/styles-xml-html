@@ -39,7 +39,7 @@
     margin-bottom: 20px;
     position: relative;
     background: var(--usach-blanco)
-    url('/templates/fondo01usach-fing.png') no-repeat center center;
+    url('./templates/fondo01usach-fing.png') no-repeat center center;
     background-size: cover;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
@@ -394,14 +394,16 @@
 Estructura general de slide
 ========================================================== */
 .slide-section {
-height: 100dvh;
+    height: 100dvh;
 }
 
 
 .slide-container {
-display: flex;
-flex-direction: column;
-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--usach-blanco)
+    url('./templates/fondo01usach-fing.png') no-repeat center center;
 }
 
 
@@ -409,13 +411,13 @@ height: 100%;
 Header / título de slide
 --------------------------- */
 .slide-header {
-height: 10%;
-display: flex;
-justify-content: center;
-align-items: center;
-color: var(--usach-blanco);
-background-color: rgba(43, 60, 90, 0.65);
-border-bottom: 2px solid var(--usach-azul-gris);
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--usach-blanco);
+    background-color: rgba(43, 60, 90, 0.65);
+    border-bottom: 2px solid var(--usach-azul-gris);
 }
 
 
@@ -423,7 +425,7 @@ border-bottom: 2px solid var(--usach-azul-gris);
 Cuerpo general del slide
 --------------------------- */
 .slide-body {
-flex: 1;
+    flex: 1;
 }
 
 
@@ -435,37 +437,37 @@ flex: 1;
 .slide-body--trio-horizontal-arriba,
 .slide-body--trio-vertical-izquierda,
 .slide-body--trio-vertical-derecha {
-height: 90%;
-gap: 1rem;
+    height: 90%;
+    gap: 1rem;
 }
 
 /* ---------------------------
 Disposición DUO vertical
 --------------------------- */
 .slide-body--duo {
-display: flex;
+    display: flex;
 }
 
 
 /* DUO horizontal */
 .slide-body--duo-horizontal {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 
 /* INDIVIDUAL */
 .slide-body--individual {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 
 /* CUARTETO */
 .slide-body--cuarteto {
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 
@@ -474,20 +476,20 @@ TRIO Horizontal (arriba o abajo)
 --------------------------- */
 .slide-body--trio-horizontal-abajo,
 .slide-body--trio-horizontal-arriba {
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: 1fr 1fr;
-grid-auto-rows: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: 1fr;
 }
 
 
 .slide-body--trio-horizontal-abajo > .slide-region-wrapper:nth-child(3) {
-grid-column: 1 / 3;
+    grid-column: 1 / 3;
 }
 
 
 .slide-body--trio-horizontal-arriba > .slide-region-wrapper:nth-child(1) {
-grid-column: 1 / 3;
+    grid-column: 1 / 3;
 }
 
 /* ---------------------------
@@ -495,19 +497,19 @@ TRIO vertical izquierda/derecha
 --------------------------- */
 .slide-body--trio-vertical-izquierda,
 .slide-body--trio-vertical-derecha {
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-rows: 1fr 1fr;
-padding: 0 2rem;
-box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 
 /* IZQUIERDA */
 .slide-body--trio-vertical-izquierda {
-grid-template-areas:
-"region1 region2"
-"region1 region3";
+    grid-template-areas:
+    "region1 region2"
+    "region1 region3";
 }
 .slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(1) { grid-area: region1; }
 .slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(2) { grid-area: region2; }
@@ -516,9 +518,9 @@ grid-template-areas:
 
 /* DERECHA */
 .slide-body--trio-vertical-derecha {
-grid-template-areas:
-"region2 region1"
-"region3 region1";
+    grid-template-areas:
+    "region2 region1"
+    "region3 region1";
 }
 .slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(1) { grid-area: region1; }
 .slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(2) { grid-area: region2; }
@@ -529,16 +531,16 @@ grid-template-areas:
 Wrapper de región
 --------------------------- */
 .slide-region-wrapper {
-flex: 1;
-padding: 10px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-overflow: hidden;
-background-color: rgba(255,255,255,0.65);
-border-radius: 6px;
-border: 1px solid var(--usach-gris-medio);
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.65);
+    border-radius: 6px;
+    border: 1px solid var(--usach-gris-medio);
 }
 
 
@@ -546,10 +548,10 @@ border: 1px solid var(--usach-gris-medio);
 Región interna
 --------------------------- */
 .region {
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 }
 
 .region--izquierda { text-align: left; align-items: flex-start; }
@@ -560,14 +562,14 @@ width: 100%;
 .region__subtitulo,
 .region__lista,
 .region__tabla-descripcion {
-width: 100%;
-text-align: inherit;
+    width: 100%;
+    text-align: inherit;
 }
 
 
 .region__subtitulo {
-font-weight: bold;
-color: var(--usach-naranja);
+    font-weight: bold;
+    color: var(--usach-naranja);
 }
 
 
@@ -575,10 +577,10 @@ color: var(--usach-naranja);
 Código
 --------------------------- */
 pre {
-padding: 1em 1.5em;
-background-color: var(--usach-gris-claro);
-border-left: 6px solid var(--usach-naranja);
-overflow-x: auto;
+    padding: 1em 1.5em;
+    background-color: var(--usach-gris-claro);
+    border-left: 6px solid var(--usach-naranja);
+    overflow-x: auto;
 }
 
 
@@ -586,8 +588,8 @@ overflow-x: auto;
 Listas
 --------------------------- */
 .region__lista {
-margin-left: 1.5em;
-margin-bottom: 1em;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
 }
 
 
@@ -595,30 +597,30 @@ margin-bottom: 1em;
 Tablas
 --------------------------- */
 .region__tabla-wrapper {
-width: 100%;
-overflow-x: auto;
+    width: 100%;
+    overflow-x: auto;
 }
 
 
 .region__tabla {
-border: 1px solid var(--usach-gris-medio);
-border-collapse: collapse;
-width: 100%;
-min-width: 300px;
+    border: 1px solid var(--usach-gris-medio);
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 300px;
 }
 
 
 .region__tabla td {
-text-align: center;
-font-size: 0.9em;
-border: 1px solid var(--usach-gris-medio);
+    text-align: center;
+    font-size: 0.9em;
+    border: 1px solid var(--usach-gris-medio);
 }
 
 
 .region__tabla td:first-child {
-background: var(--usach-verde);
-color: var(--usach-blanco);
-font-weight: bold;
+    background: var(--usach-verde);
+    color: var(--usach-blanco);
+    font-weight: bold;
 }
 
 
@@ -626,26 +628,25 @@ font-weight: bold;
 Imágenes
 --------------------------- */
 .region__imagen-wrapper {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 100%;
-height: 100%;
-overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 
 .region__imagen {
-max-width: 100%;
-max-height: 70%;
-object-fit: contain;
+    max-width: 100%;
+    max-height: 70%;
+    object-fit: contain;
 }
-
 
 /* ---------------------------
 Quizz
 --------------------------- */
 .quizz {
-height: 100dvh;
+    height: 100dvh;
 }

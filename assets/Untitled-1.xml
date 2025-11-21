@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="usach-render.css"?>
+<Videoclase>
+    <Metadatos>
+        <SoftwareVersion>1.0</SoftwareVersion>
+        <Titulo>Fundamentos de Programación</Titulo>
+        <Autoria>Juan Pérez</Autoria>
+        <Autoria>María Gómez</Autoria>
+        <Fecha>2024-12-04</Fecha>
+    </Metadatos>
+    <Contenido>
+        <Diapositiva disposicion="titulo" titulo="Ingenieria de requerimientos">
+        </Diapositiva>
+
+
+        <Diapositiva disposicion="individual" titulo="Titulo">
+            <region justificacion="centro" tts="Esto es un ejemplo">
+                <texto>Esto es texto, un parrafo.</texto>
+                <listaOrdenada>
+                    <item>Definición de requerimientos</item>
+                    <item>Documentación de requerimientos</item>
+                    <item>Mantenimiento de requerimientos</item>
+                </listaOrdenada>
+            </region>
+        </Diapositiva>
+
+        <Diapositiva disposicion="individual" titulo="Titulo">
+            <region justificacion="centro" tts="Diapositiva con lista no ordenada">
+                <texto>Esto es texto, un parrafo.</texto>
+                <subtitulo>Subtitulo</subtitulo>
+                <listaNoOrdenada>
+                    <item>Definición de requerimientos</item>
+                    <item>Documentación de requerimientos</item>
+                    <item>Mantenimiento de requerimientos</item>
+                </listaNoOrdenada>
+            </region>
+        </Diapositiva>
+
+        <Diapositiva disposicion="individual" titulo="Diapositiva con tabla">
+            <region justificacion="izquierda" tts="diapo con tabla">
+                <texto>A continuación se muestra una tabla:</texto>
+                <tabla descripcion="Tabla de datos">
+                    <fila>
+                        <celda>Nombre</celda>
+                        <celda>Edad</celda>
+                    </fila>
+                    <fila>
+                        <celda>Juan</celda>
+                        <celda>25</celda>
+                    </fila>
+                    <fila>
+                        <celda>María</celda>
+                        <celda>30</celda>
+                    </fila>
+                </tabla>
+            </region>
+        </Diapositiva>
+
+        <Diapositiva disposicion="individual" titulo="Diapositiva con imagen">
+            <region justificacion="centro" tts="diapo con imagen de un gato">
+                <texto>Imagen de un gato:</texto>
+                <imagen url="https://s1.significados.com/foto/gato-og.jpg" descripcion="Gato"/>
+            </region>
+        </Diapositiva>
+
+
+        <Diapositiva disposicion="trio-horizontal-arriba" titulo="Diapositiva con tres regiones Horizontal arriba">
+            <region justificacion="izquierda" tts="Diapositiva con tres regiones Horizontal arriba">
+                <texto>Primera región</texto>
+                <imagen url="https://s1.significados.com/foto/gato-og.jpg" descripcion="Gato"/>
+            </region>
+            <region justificacion="centro">
+                <texto>Segunda región</texto>
+            </region>
+            <region justificacion="derecha">
+                <texto>Esto es texto, un parrafo.</texto>
+                <subtitulo>Subtitulo</subtitulo>
+                <listaNoOrdenada>
+                    <item>Definición de requerimientos</item>
+                    <item>Documentación de requerimientos</item>
+                    <item>Mantenimiento de requerimientos</item>
+                </listaNoOrdenada>
+            </region>
+        </Diapositiva>
+
+        <Diapositiva disposicion="trio-horizontal-abajo">
+            <region justificacion="izquierda" tts="Diapositiva con tres regiones Horizontal abajo">
+                <texto>Primera región</texto>
+                <imagen url="https://s1.significados.com/foto/gato-og.jpg" descripcion="Gato"/>
+            </region>
+            <region justificacion="centro">
+                <texto>Segunda región</texto>
+                <codigo>
+                    #codigo en python
+                    def suma(a, b):
+                        return a + b
+                    print(suma(2, 3))
+                </codigo>
+            </region>
+            <region justificacion="derecha">
+                <texto>Tercera región</texto>
+                <imagen url="https://fonsabana.com.co/wp-content/uploads/2025/04/1-BANNERS%20WEB%202025%20(1400%20x%20500%20px)-768x274.png" descripcion="Ejemplo vertical"/>
+            </region>
+        </Diapositiva>
+
+        <Diapositiva disposicion="individual">
+            <region justificacion="derecha">
+                <codigo>
+                    #codigo en python
+                    def suma(a, b):
+                        return a + b
+                    print(suma(2, 3))
+                </codigo>
+            </region>
+        </Diapositiva>
+
+        <Diapositiva disposicion="interactivo-alternativas">
+            <pregunta>¿Cuál de las siguientes opciones es una estructura de control en Python?</pregunta>
+            <alternativas>
+                <alternativa correcto="false">Lista</alternativa>
+                <alternativa correcto="true">If-Else</alternativa>
+                <alternativa correcto="false">Tupla</alternativa>
+                <alternativa correcto="false">Diccionario</alternativa>
+                <alternativa correcto="false">Módulo</alternativa>
+                <alternativa correcto="false">Paquete</alternativa>
+            </alternativas>
+            <retroalimentacion>La estructura de control If-Else es utilizada para tomar decisiones en un programa.</retroalimentacion>
+        </Diapositiva>
+
+        <Diapositiva disposicion="interactivo-alternativas" titulo="Quiz con banco">
+            <banco>
+                <qitem>
+                    <pregunta>¿Qué estructura se usa para iterar en Python?</pregunta>
+                    <alternativas>
+                        <alternativa correcto="false">if</alternativa>
+                        <alternativa correcto="true">for</alternativa>
+                        <alternativa correcto="false">def</alternativa>
+                        <alternativa correcto="false">class</alternativa>
+                        <alternativa correcto="false">try</alternativa>
+                        <alternativa correcto="false">return</alternativa>
+                    </alternativas>
+                    <retroalimentacion>for es el bucle más común junto con while.</retroalimentacion>
+                </qitem>
+                <qitem>
+                    <pregunta>¿Cuál es el tipo inmutable?</pregunta>
+                    <alternativas>
+                        <alternativa correcto="false">list</alternativa>
+                        <alternativa correcto="true">tuple</alternativa>
+                        <alternativa correcto="false">dict</alternativa>
+                        <alternativa correcto="false">set</alternativa>
+                        <alternativa correcto="false">bytearray</alternativa>
+                        <alternativa correcto="false">array</alternativa>
+                    </alternativas>
+                    <retroalimentacion>Las tuplas son inmutables; las listas no.</retroalimentacion>
+                </qitem>
+                <qitem>
+                    <pregunta>¿Qué función imprime en pantalla en Python?</pregunta>
+                    <alternativas>
+                        <alternativa correcto="true">print</alternativa>
+                        <alternativa correcto="false">echo</alternativa>
+                        <alternativa correcto="false">puts</alternativa>
+                        <alternativa correcto="false">write</alternativa>
+                        <alternativa correcto="false">out</alternativa>
+                        <alternativa correcto="false">show</alternativa>
+                    </alternativas>
+                    <retroalimentacion>print es la función estándar de salida.</retroalimentacion>
+                </qitem>
+                <qitem>
+                    <pregunta>¿Qué palabra clave define una función en Python?</pregunta>
+                    <alternativas>
+                        <alternativa correcto="true">def</alternativa>
+                        <alternativa correcto="false">func</alternativa>
+                        <alternativa correcto="false">function</alternativa>
+                        <alternativa correcto="false">lambda</alternativa>
+                        <alternativa correcto="false">macro</alternativa>
+                        <alternativa correcto="false">define</alternativa>
+                    </alternativas>
+                    <retroalimentacion>def inicia la definición; lambda crea funciones anónimas.</retroalimentacion>
+                </qitem>
+                <qitem>
+                    <pregunta>¿Cuál de estos es un bucle en Python?</pregunta>
+                    <alternativas>
+                        <alternativa correcto="false">switch</alternativa>
+                        <alternativa correcto="true">while</alternativa>
+                        <alternativa correcto="false">foreach</alternativa>
+                        <alternativa correcto="false">loop</alternativa>
+                        <alternativa correcto="false">repeat</alternativa>
+                        <alternativa correcto="false">until</alternativa>
+                    </alternativas>
+                    <retroalimentacion>Python tiene for y while; no tiene switch.</retroalimentacion>
+                </qitem>
+                <qitem>
+                    <pregunta>¿Cómo se comenta una línea en Python?</pregunta>
+                    <alternativas>
+                        <alternativa correcto="true"># comentario</alternativa>
+                        <alternativa correcto="false">// comentario</alternativa>
+                        <alternativa correcto="false">/* comentario */</alternativa>
+                        <alternativa correcto="false">-- comentario</alternativa>
+                        <alternativa correcto="false">% comentario</alternativa>
+                        <alternativa correcto="false">; comentario</alternativa>
+                    </alternativas>
+                    <retroalimentacion>Se usa # para comentarios de una línea.</retroalimentacion>
+                </qitem>
+            </banco>
+            <retroalimentacion>Revisa los conceptos básicos de Python.</retroalimentacion>
+        </Diapositiva>
+
+        <Diapositiva disposicion="trio-vertical-derecha">
+            <region justificacion="centro" tts="Diapositiva 1 de trio vertical derecha">
+                <texto>Esto es texto, un parrafo.</texto>
+                <subtitulo>Subtitulo</subtitulo>
+                <listaNoOrdenada>
+                    <item>Definición de requerimientos</item>
+                    <item>Documentación de requerimientos</item>
+                    <item>Mantenimiento de requerimientos</item>
+                </listaNoOrdenada>
+            </region>
+            <region justificacion="centro" tts="Diapositiva 2 de trio vertical derecha">
+                <texto>Esto es texto, un parrafo.</texto>
+                <subtitulo>Subtitulo</subtitulo>
+                <listaNoOrdenada>
+                    <item>Definición de requerimientos</item>
+                    <item>Documentación de requerimientos</item>
+                    <item>Mantenimiento de requerimientos</item>
+                </listaNoOrdenada>
+            </region>
+            <region justificacion="centro" tts="Diapositiva 3 de trio vertical derecha">
+                <texto>Esto es texto, un parrafo.</texto>
+                <subtitulo>Subtitulo</subtitulo>
+                <listaNoOrdenada>
+                    <item>Definición de requerimientos</item>
+                    <item>Documentación de requerimientos</item>
+                    <item>Mantenimiento de requerimientos</item>
+                </listaNoOrdenada>
+            </region>
+        </Diapositiva>
+
+        <Diapositiva disposicion="trio-vertical-izquierda">
+            <region justificacion="centro" tts="Diapositiva 1 de trio vertical izquierda">
+                <texto>Esto es texto, un parrafo.</texto>
+                <subtitulo>Subtitulo</subtitulo>
+                  <codigo>
+                    #codigo en python
+                    from jinja2 import Environment, FileSystemLoader
+from api.disposiciones.titulo import *
+from api.disposiciones.interactivo_alternativas import *
+from api.disposiciones.diapositivas_con_region import *
+import xml.etree.ElementTree as ET
+
+from pathlib import Path
+
+env = Environment(loader=FileSystemLoader('templates'))
+
+# C:\Users\arace\Documents\GitHub\My GAVI_Backend\Refactorización\Backend\app\api\presentation_generator.py
+def generate_presentation_html(xml_content: bytes) -> str:
+    """
+    Genera el contenido HTML de la presentación a partir del XML proporcionado.
+    """
+    tree = ET.ElementTree(ET.fromstring(xml_content))
+    root = tree.getroot()
+
+    html_content = ""
+
+    for diapositiva in root.findall(".//Diapositiva"):
+        disposicion = diapositiva.get("disposicion").lower()
+
+        if disposicion == "titulo":
+            html_content += handle_titulo_diapositiva(diapositiva)
+        elif disposicion == "individual":
+            html_content += handle_diapositiva_region(diapositiva, 'individual')
+        elif disposicion in ["duo", "duo-vertical"]:
+            html_content += handle_diapositiva_region(diapositiva, 'duo')
+        elif disposicion == "duo-horizontal":
+            html_content += handle_diapositiva_region(diapositiva, 'duo-horizontal')
+        elif disposicion == "trio-vertical-derecha":
+            html_content += handle_diapositiva_region(diapositiva, 'trio-vertical-derecha')
+        elif disposicion == "trio-vertical-izquierda":
+            html_content += handle_diapositiva_region(diapositiva, 'trio-vertical-izquierda')
+        elif disposicion == "cuarteto":
+            html_content += handle_diapositiva_region(diapositiva, 'cuarteto')
+        elif disposicion == "interactivo-alternativas":
+            html_content += handle_interactivo_alternativas_diapositiva(diapositiva)
+
+    
+    # Obtener ruta absoluta al css
+    base_dir = Path(__file__).resolve().parent.parent  # subo dos niveles según estructura
+    css_path = base_dir / "static" / "css" / "global.css"
+
+    # Leer CSS para incrustarlo inline
+    with open(css_path, "r", encoding="utf-8") as f:
+        css_content = f.read()
+
+    template = env.get_template("plantilla.html")
+    rendered_html = template.render(content=html_content, css_inline=css_content)
+
+    return rendered_html
+
+                </codigo>
+            </region>
+            <region justificacion="centro" tts="Diapositiva 2 de trio vertical izquierda">
+             <texto>Esto es texto, un parrafo.</texto>
+                <codigo>
+                    #codigo en python
+                    from jinja2 import Environment, FileSystemLoader
+from api.disposiciones.titulo import *
+from api.disposiciones.interactivo_alternativas import *
+from api.disposiciones.diapositivas_con_region import *
+import xml.etree.ElementTree as ET
+
+from pathlib import Path
+
+env = Environment(loader=FileSystemLoader('templates'))
+
+# C:\Users\arace\Documents\GitHub\My GAVI_Backend\Refactorización\Backend\app\api\presentation_generator.py
+def generate_presentation_html(xml_content: bytes) -> str:
+    """
+    Genera el contenido HTML de la presentación a partir del XML proporcionado.
+    """
+    tree = ET.ElementTree(ET.fromstring(xml_content))
+    root = tree.getroot()
+
+    html_content = ""
+
+    for diapositiva in root.findall(".//Diapositiva"):
+        disposicion = diapositiva.get("disposicion").lower()
+
+        if disposicion == "titulo":
+            html_content += handle_titulo_diapositiva(diapositiva)
+        elif disposicion == "individual":
+            html_content += handle_diapositiva_region(diapositiva, 'individual')
+        elif disposicion in ["duo", "duo-vertical"]:
+            html_content += handle_diapositiva_region(diapositiva, 'duo')
+        elif disposicion == "duo-horizontal":
+            html_content += handle_diapositiva_region(diapositiva, 'duo-horizontal')
+        elif disposicion == "trio-vertical-derecha":
+            html_content += handle_diapositiva_region(diapositiva, 'trio-vertical-derecha')
+        elif disposicion == "trio-vertical-izquierda":
+            html_content += handle_diapositiva_region(diapositiva, 'trio-vertical-izquierda')
+        elif disposicion == "cuarteto":
+            html_content += handle_diapositiva_region(diapositiva, 'cuarteto')
+        elif disposicion == "interactivo-alternativas":
+            html_content += handle_interactivo_alternativas_diapositiva(diapositiva)
+
+    
+    # Obtener ruta absoluta al css
+    base_dir = Path(__file__).resolve().parent.parent  # subo dos niveles según estructura
+    css_path = base_dir / "static" / "css" / "global.css"
+
+    # Leer CSS para incrustarlo inline
+    with open(css_path, "r", encoding="utf-8") as f:
+        css_content = f.read()
+
+    template = env.get_template("plantilla.html")
+    rendered_html = template.render(content=html_content, css_inline=css_content)
+
+    return rendered_html
+
+                </codigo>
+            </region>
+            <region justificacion="centro" tts="Diapositiva 3 de trio vertical izquierda">
+             <texto>Esto es texto, un parrafo.</texto>
+            
+                 <codigo>
+                    #codigo en python
+                    from jinja2 import Environment, FileSystemLoader
+from api.disposiciones.titulo import *
+from api.disposiciones.interactivo_alternativas import *
+from api.disposiciones.diapositivas_con_region import *
+import xml.etree.ElementTree as ET
+
+from pathlib import Path
+
+env = Environment(loader=FileSystemLoader('templates'))
+
+# C:\Users\arace\Documents\GitHub\My GAVI_Backend\Refactorización\Backend\app\api\presentation_generator.py
+def generate_presentation_html(xml_content: bytes) -> str:
+    """
+    Genera el contenido HTML de la presentación a partir del XML proporcionado.
+    """
+    tree = ET.ElementTree(ET.fromstring(xml_content))
+    root = tree.getroot()
+
+    html_content = ""
+
+    for diapositiva in root.findall(".//Diapositiva"):
+        disposicion = diapositiva.get("disposicion").lower()
+
+        if disposicion == "titulo":
+            html_content += handle_titulo_diapositiva(diapositiva)
+        elif disposicion == "individual":
+            html_content += handle_diapositiva_region(diapositiva, 'individual')
+        elif disposicion in ["duo", "duo-vertical"]:
+            html_content += handle_diapositiva_region(diapositiva, 'duo')
+        elif disposicion == "duo-horizontal":
+            html_content += handle_diapositiva_region(diapositiva, 'duo-horizontal')
+        elif disposicion == "trio-vertical-derecha":
+            html_content += handle_diapositiva_region(diapositiva, 'trio-vertical-derecha')
+        elif disposicion == "trio-vertical-izquierda":
+            html_content += handle_diapositiva_region(diapositiva, 'trio-vertical-izquierda')
+        elif disposicion == "cuarteto":
+            html_content += handle_diapositiva_region(diapositiva, 'cuarteto')
+        elif disposicion == "interactivo-alternativas":
+            html_content += handle_interactivo_alternativas_diapositiva(diapositiva)
+
+    
+    # Obtener ruta absoluta al css
+    base_dir = Path(__file__).resolve().parent.parent  # subo dos niveles según estructura
+    css_path = base_dir / "static" / "css" / "global.css"
+
+    # Leer CSS para incrustarlo inline
+    with open(css_path, "r", encoding="utf-8") as f:
+        css_content = f.read()
+
+    template = env.get_template("plantilla.html")
+    rendered_html = template.render(content=html_content, css_inline=css_content)
+
+    return rendered_html
+
+                </codigo>
+            </region>
+        </Diapositiva>
+
+    </Contenido>
+</Videoclase>
