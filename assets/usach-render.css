@@ -395,11 +395,10 @@ Estructura general de slide
 ========================================================== */
 .reveal .slide-background-content {
     background: var(--usach-blanco) url('./templates/fondo01usach-fing.png')
-                no-repeat center center !important;
+                no-repeat top center !important;
     background-size: cover !important;
-    margin: 0;
-    padding: 0;
 }
+
 
 .slide-section {
     height: 100dvh;
@@ -427,9 +426,6 @@ Header / título de slide
 .reveal h3 {
     color: var(--usach-verde) !important;
 }
-
-
-
 
 /* ---------------------------
     Cuerpo de slide (body) según disposición
