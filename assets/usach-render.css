@@ -432,25 +432,28 @@ Header / título de slide
 .slide-body--trio-vertical-derecha {
     display: grid;
     grid-template-areas:
-        "region2 region1"
-        "region3 region1";
+        "region3 region2"
+        "region1 region2"
+        "region1 region2";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; /* Ahora A ocupa solo 1 fila */
     gap: 1rem;
     height: 90%;
     padding: 0 2rem;
     box-sizing: border-box;
 }
 
+/* === Reasignación correcta de regiones === */
 .slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(1) {
-    grid-area: region1;
+    grid-area: region3; /* A arriba izq */
 }
 .slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(2) {
-    grid-area: region2;
+    grid-area: region1; /* B abajo izq */
 }
 .slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(3) {
-    grid-area: region3;
+    grid-area: region2; /* C derecha completa */
 }
+
 
 /* Padding específico para wrappers de región en trios */
 .slide-body--trio-vertical-izquierda .slide-region-wrapper,
