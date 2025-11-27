@@ -92,33 +92,13 @@
     grid-template-rows: auto 1fr 1fr;
 }
 
-/* === TRIO VERTICAL DERECHA === */
 .render-usach Diapositiva[disposicion="trio-vertical-derecha"] {
-    display: grid;
     grid-template-areas:
-        "titulo titulo"
-        "region2 region1"
-        "region3 region1";
+        "region3 region2"
+        "region1 region2"
+        "region1 region2";
     grid-template-rows: auto 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
 }
-
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"] > region:nth-of-type(1) {
-    grid-area: region1; /* A → derecha vertical */
-}
-
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"] > region:nth-of-type(2) {
-    grid-area: region2; /* B → arriba izquierda */
-}
-
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"] > region:nth-of-type(3) {
-    grid-area: region3; /* C → abajo izquierda */
-}
-
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"]::before {
-    grid-area: titulo;
-}
-
 
 .render-usach Diapositiva[disposicion="cuarteto"] {
     grid-template-areas: "titulo titulo"
