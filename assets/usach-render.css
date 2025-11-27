@@ -553,8 +553,14 @@ pre {
     border-radius: 6px;
     padding: 1em 1.25em;
     margin: 1em 0;
-    overflow-x: auto;
-    max-height: 70%;
+
+    display: inline-block;  /* Ajuste al contenido */
+    width: auto !important;
+    max-width: 90vw;  /* límite máximo de ancho */
+    max-height: 50vh; /* límite máximo de alto */
+
+    white-space: pre;  /* Mantener formato original */
+    overflow: auto;    /* Scroll si excede límites */
 }
 
 /* Estilo del código dentro */
