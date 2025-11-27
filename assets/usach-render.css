@@ -1,4 +1,4 @@
-templates/fondo01/* === COLORES INSTITUCIONALES === */
+/* === COLORES INSTITUCIONALES === */
 :root {
     --usach-azul-gris: #394049;
     --usach-naranja: #EA7600;
@@ -315,7 +315,6 @@ Estructura general de slide
                 no-repeat top center !important;
     background-size: cover !important;
 }
-
 
 .slide-section {
     height: 100dvh;
