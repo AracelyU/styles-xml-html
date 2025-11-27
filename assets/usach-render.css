@@ -69,6 +69,7 @@
     grid-template-areas: "titulo titulo" "region1 region2";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
+    height: 100%;
 }
 
 .render-usach Diapositiva[disposicion="trio-horizontal-abajo"] {
@@ -428,7 +429,7 @@ Header / título de slide
     grid-area: region3;
 }
 
-/* Derecha: una columna alta a la derecha, dos filas apiladas a la izquierda */
+/* Derecha: una columna alta a la derecha, dos filas apiladas a la izquierda (revisado) */
 .slide-body--trio-vertical-derecha {
     display: grid;
     grid-template-areas:
@@ -452,7 +453,6 @@ Header / título de slide
 .slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(3) {
     grid-area: region3; /* C */
 }
-
 
 /* Padding específico para wrappers de región en trios */
 .slide-body--trio-vertical-izquierda .slide-region-wrapper,
@@ -600,7 +600,6 @@ pre {
 
 /* === TABLA === */
 .reveal table.region__tabla {
-    max-width: 100%;
     border-collapse: collapse;
     font-size: calc(0.9vw + 0.9vh); /* Mantiene escala responsiva Reveal.js */
     color: var(--usach-azul-gris);
