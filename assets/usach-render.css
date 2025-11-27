@@ -584,40 +584,57 @@ pre {
 /* ------------------
     Tablas
    ------------------ */
+/* === CONTENEDOR DE TABLA === */
 .region__tabla-wrapper {
     width: 100%;
-    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em auto;
+    overflow-x: auto; /* Evita que la tabla rompa el slide */
 }
 
-.region__tabla {
-    border: 1px solid #000;
+/* === TABLA === */
+.reveal table.region__tabla {
+    max-width: 100%;
     border-collapse: collapse;
-    width: 100%;
-    min-width: 300px;
+    font-size: calc(0.9vw + 0.9vh); /* Mantiene escala responsiva Reveal.js */
+    color: var(--usach-azul-gris);
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
-.region__tabla td {
+/* === CELDAS === */
+.reveal table.region__tabla td {
+    padding: 0.6em 1.2em;
+    border: 1px solid var(--usach-gris-medio);
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 240px;
+    word-wrap: break-word;
+    vertical-align: middle;
+}
+
+/* === TÍTULO DE LA TABLA === */
+.region__tabla-titulo {
     text-align: center;
-    font-size: 0.9em;
-    border: 1px solid #000;
+    font-weight: bold;
+    font-size: calc(1vw + 1vh);
+    color: var(--usach-verde);
+    margin: 0 0 0.6em 0;
 }
 
-.region__tabla .td--duo {
-    padding: 5px;
-}
-
+/* === DESCRIPCIÓN DE LA TABLA === */
 .region__tabla-descripcion {
-    text-align: center;
-    font-style: italic;
-    font-size: 0.9em;
     margin-top: 0.5em;
+    text-align: center;
+    font-size: calc(0.7vw + 0.7vh);
+    color: var(--usach-azul-gris);
+    max-width: 90%;
 }
 
-.region__tabla-descripcion--duo-horizontal,
-.region__tabla-descripcion--trio-horizontal-arriba,
-.region__tabla-descripcion--trio-horizontal-abajo {
+.region__tabla-descripcion p {
     margin: 0;
 }
+
 
 /* ------------------------------
    IMÁGENES
