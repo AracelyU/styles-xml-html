@@ -68,7 +68,9 @@
 .render-usach Diapositiva[disposicion="duo"] {
     grid-template-areas: "titulo titulo" "region1 region2";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
+}
+
+.render-usach Diapositiva[disposicion="duo"] region {
     height: 100%;
 }
 
@@ -302,7 +304,7 @@
 /* ==========================================================
 Estructura general de slide
 ========================================================== */
-.reveal .slide-background-content {
+.reveal .slide {
     background: var(--usach-blanco) url('./templates/fondo01usach-fing.png')
                 no-repeat top center !important;
     background-size: cover !important;
