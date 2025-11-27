@@ -1,4 +1,4 @@
-/* === COLORES INSTITUCIONALES === */
+templates/fondo01/* === COLORES INSTITUCIONALES === */
 :root {
     --usach-azul-gris: #394049;
     --usach-naranja: #EA7600;
@@ -239,7 +239,7 @@
     font-size: 0.9em;
     white-space: pre-wrap;
     color: var(--usach-negro);
-    background: #f0f0f0;
+    background: #000;
     border-left: 4px solid var(--usach-naranja);
     border-radius: 6px;
 }
@@ -310,7 +310,7 @@
 /* ==========================================================
 Estructura general de slide
 ========================================================== */
-.reveal .slide {
+.reveal .slide-background-content {
     background: var(--usach-blanco) url('./templates/fondo01usach-fing.png')
                 no-repeat top center !important;
     background-size: cover !important;
@@ -537,36 +537,40 @@ Header / título de slide
     text-align: inherit;
 }
 
-/* CODIGO */
+/* ------------------
+    Código y listas
+   ------------------ */
+pre {
+    padding: 1em 1.5em;
+    margin: 1em 0;
+    background-color: #282c24;
+    overflow-x: auto;
+}
+
+/* Contenedor del bloque */
 .reveal pre {
-    background: #f0f0f0 !important;
+    background: #000 !important;
     border-left: 4px solid var(--usach-naranja);
     border-radius: 6px;
-    padding: 1em;              
+    padding: 1em 1.25em;
     margin: 1em 0;
     overflow-x: auto;
-    /* tamaños originales se mantienen: width, height, overflow-y dados por reveal*/
 }
 
 /* Estilo del código dentro */
 .reveal pre code {
     font-family: "Courier New", monospace;
+    font-size: 0.9em;
     color: var(--usach-negro) !important;
     white-space: pre-wrap;
-    /* tamaños originales se mantienen: font-size, line-height dados por reveal */
+    line-height: 1.4;
 }
 
-/* Opcional: desactivar el tema oscuro de highlight.js 
-
+/* Opcional: desactivar el tema oscuro de monokai */
 .reveal pre code.hljs {
     background: transparent !important;
 }
 
-*/
-
-
-
-/* LISTA*/
 
 .region__lista {
     margin-left: 1.5em;
