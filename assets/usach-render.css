@@ -70,7 +70,13 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.render-usach Diapositiva[disposicion="duo"] region {
+.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(1) {
+    grid-area: region1;
+    height: 100%;
+}
+
+.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(2) {
+    grid-area: region2;
     height: 100%;
 }
 
@@ -531,40 +537,36 @@ Header / título de slide
     text-align: inherit;
 }
 
-/* ------------------
-    Código y listas
-   ------------------ */
-pre {
-    padding: 1em 1.5em;
-    margin: 1em 0;
-    background-color: #282c24;
-    overflow-x: auto;
-}
-
-/* Contenedor del bloque */
+/* CODIGO */
 .reveal pre {
     background: #f0f0f0 !important;
     border-left: 4px solid var(--usach-naranja);
     border-radius: 6px;
-    padding: 1em 1.25em;
+    padding: 1em;              
     margin: 1em 0;
     overflow-x: auto;
+    /* tamaños originales se mantienen: width, height, overflow-y dados por reveal*/
 }
 
 /* Estilo del código dentro */
 .reveal pre code {
     font-family: "Courier New", monospace;
-    font-size: 0.9em;
     color: var(--usach-negro) !important;
     white-space: pre-wrap;
-    line-height: 1.4;
+    /* tamaños originales se mantienen: font-size, line-height dados por reveal */
 }
 
-/* Opcional: desactivar el tema oscuro de monokai */
+/* Opcional: desactivar el tema oscuro de highlight.js 
+
 .reveal pre code.hljs {
     background: transparent !important;
 }
 
+*/
+
+
+
+/* LISTA*/
 
 .region__lista {
     margin-left: 1.5em;
