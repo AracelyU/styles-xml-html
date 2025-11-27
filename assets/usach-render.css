@@ -30,27 +30,23 @@
 
 /* === Estructura de Diapositiva === */
 .render-usach Diapositiva {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
     width: 100%;
     aspect-ratio: 16 / 9;
     padding: 2em 3em;
-    margin-bottom: 20px;
     position: relative;
-    background: var(--usach-blanco)
-    url('./templates/fondo01usach-fing.png') no-repeat center center;
+    background: var(--usach-blanco) url('./templates/fondo01usach-fing.png') no-repeat center center;
     background-size: cover;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    z-index: 10;
+    overflow: hidden; /* Mantiene el tamaño total fijo */
 }
 
+/* Título */
 .render-usach Diapositiva[titulo]::before {
     content: attr(titulo);
     display: block;
-    margin-bottom: 1.5em;
     text-align: center;
     width: 100%;
     font-size: 1.8em;
@@ -58,171 +54,82 @@
     color: var(--usach-verde);
 }
 
-/* === INDIVIDUAL === */
+/* === Layouts por disposición === */
 .render-usach Diapositiva[disposicion="individual"] {
-    display: grid;
-    grid-template-areas:
-        "titulo"
-        "region1";
-    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "region1";
     grid-template-rows: auto 1fr;
-    gap: 1em;
-}
-.render-usach Diapositiva[disposicion="individual"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="individual"] region:nth-of-type(1) {
-    grid-area: region1;
 }
 
-/* === DUO HORIZONTAL === */
-/* 1 = arriba, 2 = abajo */
 .render-usach Diapositiva[disposicion="duo-horizontal"] {
-    display: grid;
-    grid-template-areas:
-        "titulo"
-        "region1"
-        "region2";
-    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "region1" "region2";
     grid-template-rows: auto 1fr 1fr;
-    gap: 1em;
 }
-.render-usach Diapositiva[disposicion="duo-horizontal"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="duo-horizontal"] region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva[disposicion="duo-horizontal"] region:nth-of-type(2) { grid-area: region2; }
 
-/* === DUO === */
-/* 1 = izquierda, 2 = derecha */
 .render-usach Diapositiva[disposicion="duo"] {
-    display: grid;
-    grid-template-areas:
-        "titulo titulo"
-        "region1 region2";
+    grid-template-areas: "titulo titulo" "region1 region2";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
-    gap: 1em;
 }
-.render-usach Diapositiva[disposicion="duo"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(2) { grid-area: region2; }
 
-/* === TRIO HORIZONTAL ABAJO === */
 .render-usach Diapositiva[disposicion="trio-horizontal-abajo"] {
-    display: grid;
-    grid-template-areas:
-        "titulo titulo"
-        "region1 region2"
-        "region3 region3";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo"
+                        "region1 region2"
+                        "region3 region3";
     grid-template-rows: auto 1fr 1fr;
-    gap: 1em;
 }
-.render-usach Diapositiva[disposicion="trio-horizontal-abajo"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] region:nth-of-type(2) { grid-area: region2; }
-.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] region:nth-of-type(3) { grid-area: region3; }
 
-/* === TRIO HORIZONTAL ARRIBA === */
 .render-usach Diapositiva[disposicion="trio-horizontal-arriba"] {
-    display: grid;
-    grid-template-areas:
-        "titulo titulo"
-        "region1 region1"
-        "region2 region3";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo"
+                        "region1 region1"
+                        "region2 region3";
     grid-template-rows: auto 1fr 1fr;
-    gap: 1em;
 }
-.render-usach Diapositiva[disposicion="trio-horizontal-arriba"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] region:nth-of-type(2) { grid-area: region2; }
-.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] region:nth-of-type(3) { grid-area: region3; }
 
-/* === TRIO VERTICAL IZQUIERDA === */
 .render-usach Diapositiva[disposicion="trio-vertical-izquierda"] {
-    display: grid;
-    grid-template-areas:
-        "titulo titulo"
-        "region1 region2"
-        "region1 region3";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo"
+                        "region1 region2"
+                        "region1 region3";
     grid-template-rows: auto 1fr 1fr;
-    gap: 1em;
 }
-.render-usach Diapositiva[disposicion="trio-vertical-izquierda"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] region:nth-of-type(2) { grid-area: region2; }
-.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] region:nth-of-type(3) { grid-area: region3; }
 
-/* === TRIO VERTICAL DERECHA === */
 .render-usach Diapositiva[disposicion="trio-vertical-derecha"] {
-    display: grid;
-    grid-template-areas:
-        "titulo titulo"
-        "region1 region3"
-        "region2 region3";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo"
+                        "region1 region3"
+                        "region2 region3";
     grid-template-rows: auto 1fr 1fr;
-    gap: 1em;
 }
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"] region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"] region:nth-of-type(2) { grid-area: region2; }
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"] region:nth-of-type(3) { grid-area: region3; }
 
-/* === CUARTETO === */
 .render-usach Diapositiva[disposicion="cuarteto"] {
-    display: grid;
-    grid-template-areas:
-        "titulo titulo"
-        "region1 region2"
-        "region3 region4";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titulo titulo"
+                        "region1 region2"
+                        "region3 region4";
     grid-template-rows: auto 1fr 1fr;
-    gap: 1em;
 }
-.render-usach Diapositiva[disposicion="cuarteto"]::before {
-    grid-area: titulo;
-    text-align: center;
-}
-.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(2) { grid-area: region2; }
-.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(3) { grid-area: region3; }
-.render-usach Diapositiva[disposicion="cuarteto"] region:nth-of-type(4) { grid-area: region4; }
 
 /* === Regiones === */
 .render-usach region {
     display: flex;
     justify-content: center;
-    align-items: center;
-    border: 3px solid rgba(57, 64, 73, 0.2);
-    border-radius: 0.75rem;
+    align-items: flex-start;
     padding: 1rem;
+    border-radius: 0.75rem;
+    border: 3px solid rgba(57, 64, 73, 0.2);
     box-shadow: inset 0 0 4px rgba(57, 64, 73, 0.15);
     backdrop-filter: blur(4px);
+    overflow: auto; /* EVITA que crezca y deforme */
+    max-width: 100%;
+    max-height: 100%;
 }
+
 .render-usach region[justificacion="izquierda"] { justify-content: flex-start; }
 .render-usach region[justificacion="centro"] { justify-content: center; }
 .render-usach region[justificacion="derecha"] { justify-content: flex-end; }
+
+/* Mapeo de posición de regiones */
+.render-usach Diapositiva region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva region:nth-of-type(2) { grid-area: region2; }
+.render-usach Diapositiva region:nth-of-type(3) { grid-area: region3; }
+.render-usach Diapositiva region:nth-of-type(4) { grid-area: region4; }
 
 /* === Texto === */
 .render-usach texto {
