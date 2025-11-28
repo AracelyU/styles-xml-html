@@ -224,10 +224,10 @@
 /* === Imágenes === */
 .render-usach img {
     display: block;
-    max-width: 60%;
-    max-height: 70%;
-    height: auto;
-    object-fit: contain;
+    width: 60%;
+    margin: 1em auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     z-index: 40;
 }
 
@@ -708,7 +708,7 @@ TRIO centrado y equilibrado
     transform: scale(0.33) translateY(-15%);
 }
 
- DUO HORIZONTAL 
+/* DUO HORIZONTAL 
 .region__imagen-wrapper--duo-horizontal {
     justify-content: center;
     max-width: 100%;
