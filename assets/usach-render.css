@@ -702,10 +702,7 @@ pre {
     z-index: 40;
 }
 
-*/
-
-
-/* Ajuste especial para trio-arriba y trio-abajo */
+ Ajuste especial para trio-arriba y trio-abajo 
 .slide-body--trio-horizontal-abajo .region__imagen,
 .slide-body--trio-horizontal-arriba .region__imagen {
     max-width: 90%;
@@ -714,7 +711,7 @@ pre {
     object-fit: contain;
 }
 
-/* Altura coherente entre trios y duos */
+ Altura coherente entre trios y duos 
 .region__imagen--trio-vertical-derecha,
 .region__imagen--trio-vertical-izquierda {
     max-height: 65%;
@@ -725,6 +722,9 @@ pre {
     justify-content: center;
     align-items: center;
 }
+
+*/
+
 
 /* Descripción de imagen */
 .region__imagen-descripcion {
