@@ -776,39 +776,3 @@ TRIO centrado y equilibrado
 .quizz {
     height: 100dvh;
 }
-
-.reveal-quiz-answer {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse; 
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-
-.region__tabla-titulo {
-    font-size: 0.5em;  /* <--- ACHICA EL TÍTULO */
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0.5em; /* Espacio entre el título y la tabla */
-    
-    /* Para que no se salga de los márgenes */
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-}
-
-
-.fragment-destacar-negrita li.fragment {
-  opacity: 1; /* Mantiene todos los fragmentos visibles */
-  font-weight: normal;
-  transition: font-weight 0.2s ease;
-}
-.fragment-destacar-negrita li.fragment.current-fragment {
-  font-weight: bold; /* El actual se pone en negrita */
-}
-
-/* --- Para orden="rojo" --- */
-.fragment-destacar-rojo li.fragment.highlight-current-red {
-  opacity: 1; /* Mantiene todos los fragmentos visibles */
-  /* El color rojo y la transición ya vienen en la clase nativa */
-}
