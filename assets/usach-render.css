@@ -689,10 +689,10 @@ pre {
     max-height: 100%;
 }
 
-/* Imágenes internas */
+/* Imágenes internas 
 .region__imagen {
-    width: 60%;
-    max-width: 100%;
+    max-width: 30%;
+    max-height: 70%;
     height: auto;
     display: block;
     margin: 1em auto;
@@ -701,6 +701,8 @@ pre {
     object-fit: contain;
     z-index: 40;
 }
+
+*/
 
 
 /* Ajuste especial para trio-arriba y trio-abajo */
