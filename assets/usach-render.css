@@ -237,7 +237,7 @@
     font-size: 0.9em;
     white-space: pre-wrap;
     color: var(--usach-gris-claro);
-    background: #000;
+    background: #282c24;
     border-left: 4px solid var(--usach-naranja);
     border-radius: 6px;
 }
@@ -546,7 +546,7 @@ pre {
 
 /* Contenedor del bloque */
 .reveal pre {
-    background: #000 !important;
+    background: #282c24 !important;
     border-left: 4px solid var(--usach-naranja);
     border-radius: 6px;
     padding: 1em 1.25em;
@@ -565,7 +565,7 @@ pre {
 .reveal pre code {
     font-family: "Courier New", monospace;
     font-size: 0.9em;
-    color: var(--usach-negro) !important;
+    color: var(--usach-gris-claro) !important;
     white-space: pre-wrap;
     line-height: 1.4;
 }
