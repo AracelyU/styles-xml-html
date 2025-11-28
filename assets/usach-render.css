@@ -578,8 +578,13 @@ pre {
 
 /* Listas */
 .region__lista {
-    margin-left: 1.5em;
+    padding-left: 1.2em;
     margin-bottom: 1em;
+}
+
+.reveal ul,
+.reveal ol {
+    padding-left: 1.2em; /* Ajusta la distancia del marker al texto */
 }
 
 .reveal ul li, 
@@ -588,12 +593,12 @@ pre {
     margin: 0.5em 0;
 }
 
-.reveal ul li::marker {
+.reveal ul li::marker,
+.reveal ol li::marker {
     color: var(--usach-naranja);
 }
 
 .reveal ol li::marker {
-    color: var(--usach-naranja);
     font-weight: bold;
 }
 
@@ -666,10 +671,7 @@ pre {
     overflow: hidden;
 }
 
-
-
 /* Imágenes internas 
-
 
 .region__imagen {
     max-width: 30%;
