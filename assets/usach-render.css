@@ -668,28 +668,11 @@ pre {
     overflow: hidden;
 }
 
-/* Escala general del DUO / INDIVIDUAL / CUARTETO */
-.region__imagen-wrapper--duo,
-.region__imagen-wrapper--individual,
-.region__imagen-wrapper--cuarteto {
-    transform: scale(0.4) translateY(-60%);
-}
 
-/* TRIO centrado y equilibrado */
-.region__imagen-wrapper--trio-vertical-derecha,
-.region__imagen-wrapper--trio-vertical-izquierda {
-    justify-content: center;
-    transform: scale(0.33) translateY(-15%);
-}
-
-/* DUO HORIZONTAL */
-.region__imagen-wrapper--duo-horizontal {
-    justify-content: center;
-    max-width: 100%;
-    max-height: 100%;
-}
 
 /* Imágenes internas 
+
+
 .region__imagen {
     max-width: 30%;
     max-height: 70%;
@@ -711,6 +694,28 @@ pre {
     object-fit: contain;
 }
 
+Escala general del DUO / INDIVIDUAL / CUARTETO 
+.region__imagen-wrapper--duo,
+.region__imagen-wrapper--individual,
+.region__imagen-wrapper--cuarteto {
+    transform: scale(0.4) translateY(-60%);
+}
+
+TRIO centrado y equilibrado 
+.region__imagen-wrapper--trio-vertical-derecha,
+.region__imagen-wrapper--trio-vertical-izquierda {
+    justify-content: center;
+    transform: scale(0.33) translateY(-15%);
+}
+
+ DUO HORIZONTAL 
+.region__imagen-wrapper--duo-horizontal {
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
  Altura coherente entre trios y duos 
 .region__imagen--trio-vertical-derecha,
 .region__imagen--trio-vertical-izquierda {
@@ -718,7 +723,7 @@ pre {
 }
 
 .region__imagen-wrapper--individual {
-    transform: none;
+    transform: none;a
     justify-content: center;
     align-items: center;
 }
