@@ -1,0 +1,248 @@
+:root {
+    --usach-azul-gris: #394049;
+    --usach-naranja: #EA7600;
+    --usach-verde: #00A499;
+    --usach-gris-claro: #F5F5F5;
+    --usach-gris-medio: #CCCCCC;
+    --usach-negro: #222222;
+    --usach-blanco: #FFFFFF;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL DE BANCO
+   ============================== */
+.render-usach .banco-editor {
+    border: 2px solid var(--usach-azul-gris);
+    padding: 1.2rem;
+    border-radius: 10px;
+    background: var(--usach-gris-claro);
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+/* ==============================
+   INPUT nombre del banco
+   ============================== */
+.render-usach .subject-input {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: 1rem;
+}
+
+.render-usach .subject-input label {
+    font-weight: 700;
+    color: var(--usach-azul-gris);
+}
+
+.render-usach .subject-input input {
+    flex: 1;
+    padding: .5rem .7rem;
+    border-radius: 6px;
+    border: 1px solid var(--usach-gris-medio);
+    background: var(--usach-blanco);
+}
+
+.render-usach .subject-input input:focus {
+    border-color: var(--usach-naranja);
+    outline: none;
+    box-shadow: 0 0 6px rgba(234,118,0,0.4);
+}
+
+
+/* ==============================
+   NAVEGACIÓN ENTRE PREGUNTAS
+   ============================== */
+.render-usach .barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+
+.render-usach .barra-navegacion span {
+    font-weight: bold;
+    color: var(--usach-azul-gris);
+}
+
+
+/* ==============================
+   BOTONES GENERALES
+   ============================== */
+.render-usach .btn {
+    font-size: .9rem;
+    border: none;
+    padding: .45rem .9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+    font-weight: 600;
+}
+
+.render-usach .btn:disabled {
+    background: var(--usach-gris-medio);
+    cursor: not-allowed;
+}
+
+/* variantes */
+.render-usach .btn-confirmar {
+    background: var(--usach-verde);
+    color: var(--usach-blanco);
+}
+.render-usach .btn-confirmar:hover {
+    background: #008377;
+}
+
+.render-usach .btn-eliminar {
+    background: #bb1d1d;
+    color: var(--usach-blanco);
+}
+.render-usach .btn-eliminar:hover {
+    background: #9a1414;
+}
+
+.render-usach .btn-ver-detalles,
+.render-usach .barra-navegacion button {
+    background: var(--usach-azul-gris);
+    color: var(--usach-blanco);
+}
+.render-usach .btn-ver-detalles:hover,
+.render-usach .barra-navegacion button:hover {
+    background: #222A33;
+}
+
+.render-usach .btn-editar {
+    background: var(--usach-naranja);
+    color: var(--usach-negro);
+}
+.render-usach .btn-editar:hover {
+    background: #cf6300;
+}
+
+
+/* ==============================
+   LISTA DE TARJETAS DE BANCOS
+   ============================== */
+.render-usach .tarjetas-vertical-scroll {
+    max-height: 450px;
+    overflow-y: auto;
+    padding: .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.render-usach .tarjeta-banco {
+    border: 1px solid var(--usach-gris-medio);
+    background: var(--usach-blanco);
+    border-radius: 8px;
+    padding: 14px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.render-usach .tarjeta-banco:hover {
+    background: var(--usach-gris-claro);
+}
+
+.render-usach .tarjeta-banco.seleccionado {
+    border-color: var(--usach-naranja);
+    background-color: #ffe9d3;
+}
+
+/* texto en tarjetas */
+.render-usach .tarjeta-banco h5 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--usach-azul-gris);
+}
+.render-usach .alternativa-correcta {
+    font-weight: bold;
+    color: var(--usach-verde);
+}
+
+
+/* ==============================
+   MODAL PARA VISTA DETALLADA
+   ============================== */
+.render-usach .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1200;
+}
+
+.render-usach .modal-content {
+    background: var(--usach-blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 12px rgba(0,0,0,.3);
+}
+
+
+/* ==============================
+   EDITOR DE ALTERNATIVAS
+   ============================== */
+.render-usach .editor-interactivo label {
+    display: block;
+    font-weight: 700;
+    margin-top: .6rem;
+    color: var(--usach-azul-gris);
+}
+
+.render-usach .editor-interactivo input,
+.render-usach .editor-interactivo textarea {
+    width: 100%;
+    padding: .7rem;
+    border: 1px solid var(--usach-gris-medio);
+    border-radius: 6px;
+    background: var(--usach-blanco);
+}
+
+/* Textarea spara retroalimentación */
+.editor-interactivo textarea {
+    min-height: 70px; 
+    resize: none; 
+}
+
+
+/* Scroll de alternativas */
+.render-usach .alternativas-scroll {
+    max-height: 230px;
+    overflow-y: auto;
+    padding: .5rem;
+    border: 1px solid var(--usach-gris-medio);
+    border-radius: 6px;
+    background: var(--usach-gris-claro);
+}
+
+.render-usach .alternativa-item {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: .4rem;
+}
+
+
+/* ==============================
+   ACCIONES FINALIZAR
+   ============================== */
+.render-usach .acciones-banco {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    gap: 1rem;
+}
+
+.render-usach .acciones-selector {
+    margin-top: 1.4rem;
+    text-align: center;
+}
