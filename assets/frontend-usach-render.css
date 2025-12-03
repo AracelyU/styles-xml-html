@@ -261,3 +261,37 @@
     margin-top: 1.4rem;
     text-align: center;
 }
+
+/* Estilos de select*/
+
+/* === Estilo general del SELECT === */
+.render-usach select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--usach-naranja);
+    border-radius: 6px;
+    background-color: var(--usach-blanco);
+    color: var(--usach-azul-gris);
+    cursor: pointer;
+    outline: none;
+}
+
+/* Hover + Focus */
+.render-usach select:hover,
+.render-usach select:focus {
+    border-color: var(--usach-verde);
+    box-shadow: 0 0 4px rgba(0,164,153,.4);
+}
+
+/* === Estilo del Dropdown (las opciones) === */
+.render-usach elect option {
+    background-color: var(--usach-azul-gris);
+    color: var(--usach-blanco);
+    padding: 0.4rem;
+}
+
+/* Opción seleccionada dentro del dropdown */
+.render-usach select option:checked {
+    background-color: var(--usach-naranja);
+    color: var(--usach-blanco);
+}
