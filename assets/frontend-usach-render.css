@@ -12,7 +12,7 @@
    CONTENEDOR PRINCIPAL DE BANCO
    ============================== */
 .render-usach .banco-editor {
-    border: 2px dashed var(--usach-naranja);
+    border: 3px solid var(--usach-naranja);
     padding: 1.8rem;
     border-radius: 12px;
     background: var(--usach-blanco);
@@ -153,13 +153,20 @@
 
 .render-usach .tarjeta-banco:hover {
     background: var(--usach-gris-claro);
-    border-color: var(--usach-verde);
+    border-color: var(--usach-naranja);
 }
 
 .render-usach .tarjeta-banco.seleccionado {
     background-color: #E0F7F4;
-    border-color: var(--usach-verde);
-    box-shadow: 0 0 8px rgba(0,164,153,.4);
+    border-color: var(--usach-azul-gris);
+    box-shadow: 0 0 8px var(--usach-naranja);
+}
+
+/*texto h3 de banco editor*/
+.render-usach .banco-editor h3 {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: var(--usach-verde);
 }
 
 /* texto en tarjetas */
