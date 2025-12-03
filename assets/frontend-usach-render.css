@@ -12,15 +12,23 @@
    CONTENEDOR PRINCIPAL DE BANCO
    ============================== */
 .render-usach .banco-editor {
-    border: 2px solid var(--usach-azul-gris);
-    padding: 1.2rem;
-    border-radius: 10px;
-    background: var(--usach-gris-claro);
+    border: 2px dashed var(--usach-naranja);
+    padding: 1.8rem;
+    border-radius: 12px;
+    background: var(--usach-blanco);
     width: 100%;
     max-width: 900px;
     margin: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
+/* Título interior del banco */
+.render-usach .banco-editor h3 {
+    text-align: center;
+    color: var(--usach-azul-gris);
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
 
 /* ==============================
    INPUT nombre del banco
@@ -41,16 +49,15 @@
     flex: 1;
     padding: .5rem .7rem;
     border-radius: 6px;
-    border: 1px solid var(--usach-gris-medio);
+    border: 2px solid var(--usach-gris-medio);
     background: var(--usach-blanco);
 }
 
 .render-usach .subject-input input:focus {
-    border-color: var(--usach-naranja);
+    border-color: var(--usach-verde);
     outline: none;
-    box-shadow: 0 0 6px rgba(234,118,0,0.4);
+    box-shadow: 0 0 6px rgba(0,164,153,.4);
 }
-
 
 /* ==============================
    NAVEGACIÓN ENTRE PREGUNTAS
@@ -63,29 +70,31 @@
 
 .render-usach .barra-navegacion span {
     font-weight: bold;
-    color: var(--usach-azul-gris);
+    color: var(--usach-naranja);
+    font-size: 1rem;
 }
 
-
 /* ==============================
-   BOTONES GENERALES
+   BOTONES USACH
    ============================== */
 .render-usach .btn {
     font-size: .9rem;
     border: none;
     padding: .45rem .9rem;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: .2s;
-    font-weight: 600;
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.10);
 }
 
 .render-usach .btn:disabled {
     background: var(--usach-gris-medio);
+    color: var(--usach-blanco);
     cursor: not-allowed;
 }
 
-/* variantes */
+/* Confirmar → Verde USACH */
 .render-usach .btn-confirmar {
     background: var(--usach-verde);
     color: var(--usach-blanco);
@@ -94,35 +103,36 @@
     background: #008377;
 }
 
+/* Eliminar → Rojo más institucional */
 .render-usach .btn-eliminar {
-    background: #bb1d1d;
+    background: #C43131;
     color: var(--usach-blanco);
 }
 .render-usach .btn-eliminar:hover {
-    background: #9a1414;
+    background: #A42020;
 }
 
-.render-usach .btn-ver-detalles,
-.render-usach .barra-navegacion button {
-    background: var(--usach-azul-gris);
-    color: var(--usach-blanco);
-}
-.render-usach .btn-ver-detalles:hover,
-.render-usach .barra-navegacion button:hover {
-    background: #222A33;
-}
-
+/* Editar → Naranjo institucional */
 .render-usach .btn-editar {
     background: var(--usach-naranja);
-    color: var(--usach-negro);
+    color: var(--usach-blanco);
 }
 .render-usach .btn-editar:hover {
     background: #cf6300;
 }
 
+/* Navegación */
+.render-usach .btn-ver-detalles,
+.render-usach .barra-navegacion button {
+    background: var(--usach-azul-gris);
+    color: var(--usach-blanco);
+}
+.render-usach .barra-navegacion button:hover {
+    background: var(--usach-negro);
+}
 
 /* ==============================
-   LISTA DE TARJETAS DE BANCOS
+   LISTA DE TARJETAS
    ============================== */
 .render-usach .tarjetas-vertical-scroll {
     max-height: 450px;
@@ -134,21 +144,22 @@
 }
 
 .render-usach .tarjeta-banco {
-    border: 1px solid var(--usach-gris-medio);
+    border: 2px solid var(--usach-gris-medio);
     background: var(--usach-blanco);
-    border-radius: 8px;
-    padding: 14px;
-    transition: .2s;
-    cursor: pointer;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: .25s;
 }
 
 .render-usach .tarjeta-banco:hover {
     background: var(--usach-gris-claro);
+    border-color: var(--usach-verde);
 }
 
 .render-usach .tarjeta-banco.seleccionado {
-    border-color: var(--usach-naranja);
-    background-color: #ffe9d3;
+    background-color: #E0F7F4;
+    border-color: var(--usach-verde);
+    box-shadow: 0 0 8px rgba(0,164,153,.4);
 }
 
 /* texto en tarjetas */
@@ -161,7 +172,6 @@
     font-weight: bold;
     color: var(--usach-verde);
 }
-
 
 /* ==============================
    MODAL PARA VISTA DETALLADA
@@ -184,9 +194,9 @@
     max-width: 700px;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 0 12px rgba(0,0,0,.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,.25);
+    border: 2px solid var(--usach-naranja);
 }
-
 
 /* ==============================
    EDITOR DE ALTERNATIVAS
@@ -207,12 +217,11 @@
     background: var(--usach-blanco);
 }
 
-/* Textarea spara retroalimentación */
-.editor-interactivo textarea {
+/* Textarea */
+.render-usach textarea {
     min-height: 70px; 
     resize: none; 
 }
-
 
 /* Scroll de alternativas */
 .render-usach .alternativas-scroll {
@@ -220,7 +229,7 @@
     overflow-y: auto;
     padding: .5rem;
     border: 1px solid var(--usach-gris-medio);
-    border-radius: 6px;
+    border-radius: 8px;
     background: var(--usach-gris-claro);
 }
 
@@ -230,7 +239,6 @@
     gap: .6rem;
     margin-bottom: .4rem;
 }
-
 
 /* ==============================
    ACCIONES FINALIZAR
