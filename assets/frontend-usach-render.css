@@ -11,7 +11,7 @@
 /* ==============================
    CONTENEDOR PRINCIPAL DE BANCO
    ============================== */
-.render-usach .banco-editor {
+.render-usach.banco-editor {
     border: 3px solid var(--usach-naranja);
     padding: 1.8rem;
     border-radius: 12px;
