@@ -182,7 +182,7 @@
 }
 
 .render-usach .barra-elementos-seleccionar__item--active {
-    background-color: var(--usach-verde);
+    background-color: var(--usach-gris-medio);
     color: var(--usach-blanco);
     border-left: 4px solid var(--usach-naranja);
 }
