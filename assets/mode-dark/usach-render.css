@@ -22,7 +22,7 @@
 /* === XML === */
 
 /* === Contenedor general === */
-.render-usach Videoclase {
+.render-usach-dark Videoclase {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -34,12 +34,12 @@
     transition: transform 0.6s ease;
 }
 
-.render-usach Metadatos {
+.render-usach-dark Metadatos {
     display: none;
 }
 
 /* === Estructura de Diapositiva === */
-.render-usach Diapositiva {
+.render-usach-dark Diapositiva {
     display: grid;
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -53,7 +53,7 @@
 }
 
 /* Título */
-.render-usach Diapositiva[titulo]::before {
+.render-usach-dark Diapositiva[titulo]::before {
     content: attr(titulo);
     display: block;
     text-align: center;
@@ -64,53 +64,53 @@
 }
 
 /* === Layouts por disposición === */
-.render-usach Diapositiva[disposicion="individual"] {
+.render-usach-dark Diapositiva[disposicion="individual"] {
     grid-template-areas: "titulo" "region1";
     grid-template-rows: auto 1fr;
 }
 
-.render-usach Diapositiva[disposicion="duo-horizontal"] {
+.render-usach-dark Diapositiva[disposicion="duo-horizontal"] {
     grid-template-areas: "titulo" "region1" "region2";
     grid-template-rows: auto 1fr 1fr;
 }
 
-.render-usach Diapositiva[disposicion="duo"] {
+.render-usach-dark Diapositiva[disposicion="duo"] {
     grid-template-areas: "titulo titulo" "region1 region2";
     grid-template-columns: 1fr 1fr;
 }
 
-.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(1) {
+.render-usach-dark Diapositiva[disposicion="duo"] region:nth-of-type(1) {
     grid-area: region1;
     height: 70%;
 }
 
-.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(2) {
+.render-usach-dark Diapositiva[disposicion="duo"] region:nth-of-type(2) {
     grid-area: region2;
     height: 70%;
 }
 
-.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] {
+.render-usach-dark Diapositiva[disposicion="trio-horizontal-abajo"] {
     grid-template-areas: "titulo titulo"
                         "region1 region2"
                         "region3 region3";
     grid-template-rows: auto 1fr 1fr;
 }
 
-.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] {
+.render-usach-dark Diapositiva[disposicion="trio-horizontal-arriba"] {
     grid-template-areas: "titulo titulo"
                         "region1 region1"
                         "region2 region3";
     grid-template-rows: auto 1fr 1fr;
 }
 
-.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] {
+.render-usach-dark Diapositiva[disposicion="trio-vertical-izquierda"] {
     grid-template-areas: "titulo titulo"
                         "region1 region2"
                         "region1 region3";
     grid-template-rows: auto 1fr 1fr;
 }
 
-.render-usach Diapositiva[disposicion="trio-vertical-derecha"] {
+.render-usach-dark Diapositiva[disposicion="trio-vertical-derecha"] {
     grid-template-areas:
         "titulo titulo"
         "region3 region1"
@@ -118,7 +118,7 @@
     grid-template-rows: auto 1fr 1fr;
 }
 
-.render-usach Diapositiva[disposicion="cuarteto"] {
+.render-usach-dark Diapositiva[disposicion="cuarteto"] {
     grid-template-areas: "titulo titulo"
                         "region1 region2"
                         "region3 region4";
@@ -126,7 +126,7 @@
 }
 
 /* === Regiones === */
-.render-usach region {
+.render-usach-dark region {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -140,25 +140,25 @@
     max-height: 100%;
 }
 
-.render-usach region[justificacion="izquierda"] { justify-content: flex-start; }
-.render-usach region[justificacion="centro"] { justify-content: center; }
-.render-usach region[justificacion="derecha"] { justify-content: flex-end; }
+.render-usach-dark region[justificacion="izquierda"] { justify-content: flex-start; }
+.render-usach-dark region[justificacion="centro"] { justify-content: center; }
+.render-usach-dark region[justificacion="derecha"] { justify-content: flex-end; }
 
 /* Mapeo de posición de regiones */
-.render-usach Diapositiva region:nth-of-type(1) { grid-area: region1; }
-.render-usach Diapositiva region:nth-of-type(2) { grid-area: region2; }
-.render-usach Diapositiva region:nth-of-type(3) { grid-area: region3; }
-.render-usach Diapositiva region:nth-of-type(4) { grid-area: region4; }
+.render-usach-dark Diapositiva region:nth-of-type(1) { grid-area: region1; }
+.render-usach-dark Diapositiva region:nth-of-type(2) { grid-area: region2; }
+.render-usach-dark Diapositiva region:nth-of-type(3) { grid-area: region3; }
+.render-usach-dark Diapositiva region:nth-of-type(4) { grid-area: region4; }
 
 /* === Texto === */
-.render-usach texto {
+.render-usach-dark texto {
     display: block;
     font-size: 1em;
     line-height: 1.6;
     margin: 0.5em 0;
     color: var(--usach-azul-gris);
 }
-.render-usach subtitulo {
+.render-usach-dark subtitulo {
     display: block;
     font-weight: bold;
     color: var(--usach-naranja);
@@ -167,7 +167,7 @@
 }
 
 /* === Listas === */
-.render-usach listaOrdenada {
+.render-usach-dark listaOrdenada {
     display: block;
     counter-reset: item; /* Inicia contador */
     margin: 1em 2em;
@@ -175,7 +175,7 @@
     color: var(--usach-gris-claro);
 }
 
-.render-usach listaOrdenada item {
+.render-usach-dark listaOrdenada item {
     display: block;
     counter-increment: item; /* Suma 1 por elemento */
     margin: 0.4em 0;
@@ -184,7 +184,7 @@
     padding-left: 1.5em;
 }
 
-.render-usach listaOrdenada item::before {
+.render-usach-dark listaOrdenada item::before {
     content: counter(item) ". ";
     position: absolute;
     left: 0;
@@ -193,14 +193,14 @@
 }
 
 /* Lista no ordenada */
-.render-usach listaNoOrdenada {
+.render-usach-dark listaNoOrdenada {
     display: block;
     margin: 1em 2em;
     font-size: 1em;
     color: var(--usach-gris-claro);
 }
 
-.render-usach listaNoOrdenada item {
+.render-usach-dark listaNoOrdenada item {
     display: block;
     position: relative;
     padding-left: 1.2em;
@@ -208,7 +208,7 @@
     margin: 0.4em 0;
 }
 
-.render-usach listaNoOrdenada item::before {
+.render-usach-dark listaNoOrdenada item::before {
     content: "•";
     position: absolute;
     left: 0;
@@ -218,15 +218,15 @@
 
 
 /* === Tablas === */
-.render-usach tabla {
+.render-usach-dark tabla {
     display: table;
     border-collapse: collapse;
     margin: 1em auto;
     font-size: 0.9em;
     color: var(--usach-gris-claro);
 }
-.render-usach fila { display: table-row; }
-.render-usach celda {
+.render-usach-dark fila { display: table-row; }
+.render-usach-dark celda {
     display: table-cell;
     padding: 0.6em 1.2em;
     border: 1px solid var(--usach-gris-medio);
@@ -234,7 +234,7 @@
 }
 
 /* === Imágenes === */
-.render-usach img {
+.render-usach-dark img {
     display: block;
     width: 60%;
     margin: 1em auto;
@@ -242,7 +242,7 @@
 }
 
 /* === Código === */
-.render-usach codigo {
+.render-usach-dark codigo {
     display: block;
     padding: 1em;
     font-family: "Courier New", monospace;
@@ -255,7 +255,7 @@
 }
 
 /* === Preguntas y alternativas === */
-.render-usach pregunta {
+.render-usach-dark pregunta {
     display: block;
     font-size: 1.6em;
     font-weight: bold;
@@ -263,11 +263,11 @@
     color: var(--usach-gris-claro);
     text-align: center;
 }
-.render-usach alternativas {
+.render-usach-dark alternativas {
     display: block;
     margin-top: 1em;
 }
-.render-usach alternativa {
+.render-usach-dark alternativa {
     display: block;
     margin: 0.4em 0;
     padding: 0.75em;
@@ -278,11 +278,11 @@
     color: var(--usach-blanco);
 }
 
-.render-usach alternativa[correcto="true"] {
+.render-usach-dark alternativa[correcto="true"] {
     background-color: #a1dca1;
     border: 1px solid #4caf50;
 }
-.render-usach qitem retroalimentacion {
+.render-usach-dark qitem retroalimentacion {
     display: block;
     margin-top: 1em;
     font-style: italic;
@@ -290,7 +290,7 @@
 }
 
 /* === Banco de preguntas === */
-.render-usach banco {
+.render-usach-dark banco {
     border: 2px dashed var(--usach-naranja);
     background-color: rgba(250, 250, 250, 0.9);
     padding: 1rem;
@@ -299,7 +299,7 @@
     font-style: italic;
     border-radius: 0.75rem;
 }
-.render-usach banco::before {
+.render-usach-dark banco::before {
     content: "Banco de preguntas (USACH)";
     display: block;
     font-weight: bold;
@@ -307,11 +307,11 @@
     color: var(--usach-naranja);
 }
 
-.render-usach banco qitem {
+.render-usach-dark banco qitem {
     display: block;
 }
 
-.render-usach banco qitem:not(:first-of-type) {
+.render-usach-dark banco qitem:not(:first-of-type) {
     display: none;
 }
 
