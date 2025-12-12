@@ -320,9 +320,11 @@
 Estructura general de slide
 ========================================================== */
 .reveal.slide-background-content {
-    background: var(--usach-azul-gris);
+    background-color: var(--usach-azul-gris);
+    background-image: none !important; /* elimina cualquier imagen previa */
     background-size: cover !important;
 }
+
 
 .slide-section {
     height: 100dvh;
