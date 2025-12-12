@@ -1,0 +1,780 @@
+/* === COLORES INSTITUCIONALES === */
+:root {
+    --usach-azul-gris: #394049;
+    --usach-naranja: #EA7600;
+    --usach-verde: #00A499;
+    --usach-gris-claro: #F5F5F5;
+    --usach-gris-medio: #CCCCCC;
+    --usach-negro: #222222;
+    --usach-blanco: #FFFFFF;
+}
+
+/* === XML === */
+
+/* === Contenedor general === */
+.render-usach Videoclase {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 2em;
+    font-family: "Roboto", "Open Sans", sans-serif;
+    color: var(--usach-azul-gris);
+    background-color: var(--usach-gris-claro);
+    transition: transform 0.6s ease;
+}
+
+.render-usach Metadatos {
+    display: none;
+}
+
+/* === Estructura de Diapositiva === */
+.render-usach Diapositiva {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 2em 3em;
+    position: relative;
+    background: var(--usach-blanco) url('../templates/fondo01usach-fing.png') no-repeat center center;
+    background-size: cover;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    overflow: hidden; /* Mantiene el tamaño total fijo */
+}
+
+/* Título */
+.render-usach Diapositiva[titulo]::before {
+    content: attr(titulo);
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--usach-verde);
+}
+
+/* === Layouts por disposición === */
+.render-usach Diapositiva[disposicion="individual"] {
+    grid-template-areas: "titulo" "region1";
+    grid-template-rows: auto 1fr;
+}
+
+.render-usach Diapositiva[disposicion="duo-horizontal"] {
+    grid-template-areas: "titulo" "region1" "region2";
+    grid-template-rows: auto 1fr 1fr;
+}
+
+.render-usach Diapositiva[disposicion="duo"] {
+    grid-template-areas: "titulo titulo" "region1 region2";
+    grid-template-columns: 1fr 1fr;
+}
+
+.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(1) {
+    grid-area: region1;
+    height: 70%;
+}
+
+.render-usach Diapositiva[disposicion="duo"] region:nth-of-type(2) {
+    grid-area: region2;
+    height: 70%;
+}
+
+.render-usach Diapositiva[disposicion="trio-horizontal-abajo"] {
+    grid-template-areas: "titulo titulo"
+                        "region1 region2"
+                        "region3 region3";
+    grid-template-rows: auto 1fr 1fr;
+}
+
+.render-usach Diapositiva[disposicion="trio-horizontal-arriba"] {
+    grid-template-areas: "titulo titulo"
+                        "region1 region1"
+                        "region2 region3";
+    grid-template-rows: auto 1fr 1fr;
+}
+
+.render-usach Diapositiva[disposicion="trio-vertical-izquierda"] {
+    grid-template-areas: "titulo titulo"
+                        "region1 region2"
+                        "region1 region3";
+    grid-template-rows: auto 1fr 1fr;
+}
+
+.render-usach Diapositiva[disposicion="trio-vertical-derecha"] {
+    grid-template-areas:
+        "titulo titulo"
+        "region3 region1"
+        "region3 region2";
+    grid-template-rows: auto 1fr 1fr;
+}
+
+.render-usach Diapositiva[disposicion="cuarteto"] {
+    grid-template-areas: "titulo titulo"
+                        "region1 region2"
+                        "region3 region4";
+    grid-template-rows: auto 1fr 1fr;
+}
+
+/* === Regiones === */
+.render-usach region {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 3px solid rgba(57, 64, 73, 0.2);
+    box-shadow: inset 0 0 4px rgba(57, 64, 73, 0.15);
+    backdrop-filter: blur(4px);
+    overflow: auto; /* EVITA que crezca y deforme */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.render-usach region[justificacion="izquierda"] { justify-content: flex-start; }
+.render-usach region[justificacion="centro"] { justify-content: center; }
+.render-usach region[justificacion="derecha"] { justify-content: flex-end; }
+
+/* Mapeo de posición de regiones */
+.render-usach Diapositiva region:nth-of-type(1) { grid-area: region1; }
+.render-usach Diapositiva region:nth-of-type(2) { grid-area: region2; }
+.render-usach Diapositiva region:nth-of-type(3) { grid-area: region3; }
+.render-usach Diapositiva region:nth-of-type(4) { grid-area: region4; }
+
+/* === Texto === */
+.render-usach texto {
+    display: block;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0.5em 0;
+    color: var(--usach-azul-gris);
+}
+.render-usach subtitulo {
+    display: block;
+    font-weight: bold;
+    color: var(--usach-naranja);
+    margin: 0.8em 0;
+    font-size: 1.2em;
+}
+
+/* === Listas === */
+.render-usach listaOrdenada {
+    display: block;
+    counter-reset: item; /* Inicia contador */
+    margin: 1em 2em;
+    font-size: 1em;
+}
+
+.render-usach listaOrdenada item {
+    display: block;
+    counter-increment: item; /* Suma 1 por elemento */
+    margin: 0.4em 0;
+    color: var(--usach-azul-gris);
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.render-usach listaOrdenada item::before {
+    content: counter(item) ". ";
+    position: absolute;
+    left: 0;
+    color: var(--usach-naranja);
+    font-weight: 600;
+}
+
+/* Lista no ordenada */
+.render-usach listaNoOrdenada {
+    display: block;
+    margin: 1em 2em;
+    font-size: 1em;
+}
+
+.render-usach listaNoOrdenada item {
+    display: block;
+    position: relative;
+    padding-left: 1.2em;
+    margin: 0.4em 0;
+}
+
+.render-usach listaNoOrdenada item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--usach-naranja);
+    font-weight: bold;
+}
+
+
+/* === Tablas === */
+.render-usach tabla {
+    display: table;
+    border-collapse: collapse;
+    margin: 1em auto;
+    font-size: 0.9em;
+    color: var(--usach-azul-gris);
+}
+.render-usach fila { display: table-row; }
+.render-usach celda {
+    display: table-cell;
+    padding: 0.6em 1.2em;
+    border: 1px solid var(--usach-gris-medio);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* === Imágenes === */
+.render-usach img {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    z-index: 40;
+}
+
+/* === Código === */
+.render-usach codigo {
+    display: block;
+    padding: 1em;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    color: var(--usach-gris-claro);
+    background: var(--usach-azul-gris);
+    border-left: 4px solid var(--usach-naranja);
+    border-radius: 6px;
+}
+
+/* === Preguntas y alternativas === */
+.render-usach pregunta {
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: var(--usach-azul-gris);
+    text-align: center;
+}
+.render-usach alternativas {
+    display: block;
+    margin-top: 1em;
+}
+.render-usach alternativa {
+    display: block;
+    margin: 0.4em 0;
+    padding: 0.75em;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid var(--usach-gris-medio);
+    transition: all 0.2s ease;
+    background-color: var(--usach-blanco);
+}
+
+.render-usach alternativa[correcto="true"] {
+    background-color: #a1dca1;
+    border: 1px solid #4caf50;
+}
+.render-usach qitem retroalimentacion {
+    display: block;
+    margin-top: 1em;
+    font-style: italic;
+    color: var(--usach-verde);
+}
+
+/* === Banco de preguntas === */
+.render-usach banco {
+    border: 2px dashed var(--usach-naranja);
+    background-color: rgba(250, 250, 250, 0.9);
+    padding: 1rem;
+    text-align: center;
+    color: var(--usach-azul-gris);
+    font-style: italic;
+    border-radius: 0.75rem;
+}
+.render-usach banco::before {
+    content: "Banco de preguntas (USACH)";
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--usach-naranja);
+}
+
+.render-usach banco qitem {
+    display: block;
+}
+
+.render-usach banco qitem:not(:first-of-type) {
+    display: none;
+}
+
+/* === HTML === */
+
+/* ==========================================================
+Estructura general de slide
+========================================================== */
+.reveal.slide-background-content {
+    background: var(--usach-blanco) url('../templates/fondo01usach-fing.png')
+                no-repeat top center !important;
+    background-size: cover !important;
+}
+
+.slide-section {
+    height: 100dvh;
+}
+
+.slide-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ---------------------------
+Header / título de slide
+--------------------------- */
+.slide-header {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--usach-verde);
+}
+
+.reveal h1, 
+.reveal h2, 
+.reveal h3 {
+    color: var(--usach-verde) !important;
+}
+
+/* ---------------------------
+    Cuerpo de slide (body) según disposición
+   ------------------------- */
+.slide-body {
+    flex: 1;
+}
+
+.slide-body--duo {
+    display: flex;
+    height: 90%;
+}
+
+.slide-body--duo-horizontal {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    gap: 1rem;
+}
+
+.slide-body--individual {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.slide-body--cuarteto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
+}
+
+/* --- TRIO ABAJO --- */
+.slide-body--trio-horizontal-abajo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
+    grid-auto-rows: 1fr;
+    padding-bottom: 1.5rem;
+    box-sizing: border-box;
+}
+
+.slide-body--trio-horizontal-abajo > .slide-region-wrapper:nth-child(3) {
+    grid-column: 1 / 3; 
+}
+
+/* --- TRIO ARRIBA --- */
+.slide-body--trio-horizontal-arriba {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
+    grid-auto-rows: 1fr;
+    padding-bottom: 1.5rem;
+    box-sizing: border-box;
+}
+
+.slide-body--trio-horizontal-arriba > .slide-region-wrapper:nth-child(1) {
+    grid-column: 1 / 3; 
+}
+
+/* -------------------------------
+    Disposición TRIO (vertical izquierda / derecha)
+   ------------------------------ */
+
+/* Izquierda: una columna alta a la izquierda, dos filas apiladas a la derecha */
+.slide-body--trio-vertical-izquierda {
+    display: grid;
+    grid-template-areas:
+        "region1 region2"
+        "region1 region3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(1) {
+    grid-area: region1;
+}
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(2) {
+    grid-area: region2;
+}
+.slide-body--trio-vertical-izquierda .slide-region-wrapper:nth-child(3) {
+    grid-area: region3;
+}
+
+/* Derecha: una columna alta a la derecha, dos filas apiladas a la izquierda (revisado) */
+.slide-body--trio-vertical-derecha {
+    display: grid;
+    grid-template-areas:
+        "region1 region3"
+        "region2 region3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 90%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* Mapeo correcto A-B-C */
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(1) {
+    grid-area: region1; /* A */
+}
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(2) {
+    grid-area: region2; /* B */
+}
+.slide-body--trio-vertical-derecha .slide-region-wrapper:nth-child(3) {
+    grid-area: region3; /* C */
+}
+
+/* Padding específico para wrappers de región en trios */
+.slide-body--trio-vertical-izquierda .slide-region-wrapper,
+.slide-body--trio-vertical-derecha .slide-region-wrapper {
+    padding: 1.5rem;
+}
+
+/* ---------------------------
+    Wrapper de cada región
+   --------------------------- */
+.slide-region-wrapper {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    overflow: hidden;
+}
+
+/* ---------------------------
+    Elementos y región
+   --------------------------- */
+.region {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Disposición: DUO */
+.region--duo {
+    height: 100%;
+}
+
+/* Disposición: DUO-HORIZONTAL, TRIOs */
+.region--duo-horizontal,
+.region--trio-horizontal-arriba,
+.region--trio-horizontal-abajo {
+    width: 100%;
+    height: 100%;
+}
+
+/* Modificadores de alineación */
+.region--izquierda {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.region--derecha {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.region--centrado {
+    align-items: center;
+    text-align: center;
+}
+
+/* Elementos internos */
+.region__subtitulo {
+    font-weight: bold;
+}
+
+.region__texto {
+    margin-bottom: 1em;
+}
+
+.region__texto,
+.region__subtitulo,
+.region__lista,
+.region__tabla-descripcion {
+    width: 100%;
+    text-align: inherit;
+}
+
+/* ------------------
+    Código y listas
+   ------------------ */
+pre {
+    padding: 1em 1.5em;
+    margin: 1em 0;
+    background-color: var(--usach-azul-gris);
+    overflow-x: auto;
+}
+
+/* Contenedor del bloque */
+.reveal pre {
+    background: var(--usach-azul-gris) !important;
+    border-left: 4px solid var(--usach-naranja);
+    border-radius: 6px;
+    padding: 1em 1.25em;
+    margin: 1em 0;
+
+    display: inline-block;  /* Ajuste al contenido */
+    width: auto !important;
+    max-width: 90vw;  /* límite máximo de ancho */
+    max-height: 50vh; /* límite máximo de alto */
+
+    white-space: pre;  /* Mantener formato original */
+    overflow: auto;    /* Scroll si excede límites */
+}
+
+/* Estilo del código dentro */
+.reveal pre code {
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    color: var(--usach-gris-claro) !important;
+    white-space: pre-wrap;
+    line-height: 1.4;
+}
+
+/* Opcional: desactivar el tema oscuro de monokai */
+.reveal pre code.hljs {
+    background: transparent !important;
+}
+
+
+/* Listas */
+.region__lista {
+    padding-left: 1.2em;
+    margin-bottom: 1em;
+}
+
+.reveal ul,
+.reveal ol {
+    padding-left: 1.2em; /* Ajusta la distancia del marker al texto */
+}
+
+.reveal ul li, 
+.reveal ol li {
+    color: var(--usach-azul-gris);
+    margin: 0.5em 0;
+}
+
+.reveal ul li::marker,
+.reveal ol li::marker {
+    color: var(--usach-naranja);
+}
+
+.reveal ol li::marker {
+    font-weight: bold;
+}
+
+/* ------------------
+    Tablas
+   ------------------ */
+/* === CONTENEDOR DE TABLA === */
+.region__tabla-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em auto;
+    overflow-x: auto; /* Evita que la tabla rompa el slide */
+    padding-bottom: 0.4em;
+}
+
+/* === TABLA === */
+.reveal table.region__tabla {
+    border-collapse: collapse;
+    font-size: calc(0.9vw + 0.9vh); /* Mantiene escala responsiva Reveal.js */
+    color: var(--usach-azul-gris);
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--usach-gris-medio);
+}
+
+/* === CELDAS === */
+.reveal table.region__tabla td {
+    padding: 0.6em 1.2em;
+    border: 1px solid var(--usach-gris-medio);
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 240px;
+    word-wrap: break-word;
+    vertical-align: middle;
+}
+
+/* === TÍTULO DE LA TABLA === */
+.region__tabla-titulo {
+    text-align: center;
+    font-weight: bold;
+    font-size: calc(1vw + 1vh);
+    color: var(--usach-verde);
+    margin: 0 0 0.6em 0;
+}
+
+/* === DESCRIPCIÓN DE LA TABLA === */
+.region__tabla-descripcion {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: calc(0.7vw + 0.7vh);
+    color: var(--usach-azul-gris);
+    max-width: 90%;
+}
+
+.region__tabla-descripcion p {
+    margin: 0;
+}
+
+
+/* ------------------------------
+   IMÁGENES
+   ------------------------------ */
+.region__imagen-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Imágenes internas 
+
+.region__imagen {
+    max-width: 30%;
+    max-height: 70%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+    z-index: 40;
+}
+
+ Ajuste especial para trio-arriba y trio-abajo 
+.slide-body--trio-horizontal-abajo .region__imagen,
+.slide-body--trio-horizontal-arriba .region__imagen {
+    max-width: 90%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+Escala general del DUO / INDIVIDUAL / CUARTETO 
+.region__imagen-wrapper--duo,
+.region__imagen-wrapper--individual,
+.region__imagen-wrapper--cuarteto {
+    transform: scale(0.4) translateY(-60%);
+}
+
+TRIO centrado y equilibrado 
+.region__imagen-wrapper--trio-vertical-derecha,
+.region__imagen-wrapper--trio-vertical-izquierda {
+    justify-content: center;
+    transform: scale(0.33) translateY(-15%);
+}
+
+/* DUO HORIZONTAL 
+.region__imagen-wrapper--duo-horizontal {
+    justify-content: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+ Altura coherente entre trios y duos 
+.region__imagen--trio-vertical-derecha,
+.region__imagen--trio-vertical-izquierda {
+    max-height: 65%;
+}
+
+.region__imagen-wrapper--individual {
+    transform: none;a
+    justify-content: center;
+    align-items: center;
+}
+
+*/
+
+
+/* Descripción de imagen */
+.region__imagen-descripcion {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+}
+
+/* ------------------------------
+   Ajuste de regiones TRIO
+   ------------------------------ */
+
+/* Centrado uniforme para las regiones del TRIO */
+.slide-body--trio-vertical-izquierda .slide-region-wrapper,
+.slide-body--trio-vertical-derecha .slide-region-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Fuerza filas iguales */
+.slide-body--trio-vertical-izquierda,
+.slide-body--trio-vertical-derecha {
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+}
+
+/* Centrado interno consistente */
+.slide-body--trio-vertical-izquierda .region,
+.slide-body--trio-vertical-derecha .region {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* ------------------------------
+   Quizz interactivo
+   ------------------------------ */
+.quizz {
+    height: 100dvh;
+}

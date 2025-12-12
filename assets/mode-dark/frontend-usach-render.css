@@ -1,0 +1,151 @@
+:root {
+    --usach-azul-gris: #394049;
+    --usach-naranja: #EA7600;
+    --usach-verde: #00A499;
+    --usach-gris-claro: #F5F5F5;
+    --usach-gris-medio: #CCCCCC;
+    --usach-negro: #222222;
+    --usach-blanco: #FFFFFF;
+
+    /* ========================
+       PALETA MODO OSCURO
+       ======================== */
+    --dark-bg: #1E1E1E;
+    --dark-bg-light: #2A2A2A;
+    --dark-border: #3A3A3A;
+    --dark-text: #E5E5E5;
+    --dark-text-soft: #C8C8C8;
+    --dark-shadow: rgba(0,0,0,0.45);
+}
+
+
+/* ===========================================
+   MODO OSCURO USACH
+   =========================================== */
+.render-usach-dark {
+    color-scheme: dark;
+}
+
+/* Contenedor principal */
+.render-usach-dark.banco-editor {
+    background: var(--dark-bg);
+    border-color: var(--usach-naranja);
+    box-shadow: 0 4px 15px var(--dark-shadow);
+}
+
+/* Títulos */
+.render-usach-dark .banco-editor h3 {
+    color: var(--usach-verde);
+}
+
+/* Inputs */
+.render-usach-dark .subject-input label {
+    color: var(--dark-text);
+}
+
+.render-usach-dark .subject-input input {
+    background: var(--dark-bg-light);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+.render-usach-dark .subject-input input:focus {
+    border-color: var(--usach-verde);
+    box-shadow: 0 0 6px rgba(0,164,153,.5);
+}
+
+/* Navegación entre preguntas */
+.render-usach-dark .barra-navegacion span {
+    color: var(--usach-naranja);
+}
+
+/* Botones */
+.render-usach-dark .btn {
+    box-shadow: 0 2px 4px var(--dark-shadow);
+}
+
+.render-usach-dark .btn:disabled {
+    background: var(--dark-border);
+    color: var(--dark-text-soft);
+}
+
+/* Navegación */
+.render-usach-dark .btn-ver-detalles,
+.render-usach-dark .barra-navegacion button {
+    background: var(--dark-bg-light);
+    color: var(--dark-text);
+}
+
+.render-usach-dark .barra-navegacion button:hover {
+    background: var(--usach-negro);
+}
+
+/* Tarjetas */
+.render-usach-dark .tarjeta-banco {
+    background: var(--dark-bg-light);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+.render-usach-dark .tarjeta-banco:hover {
+    background: #323232;
+    border-color: var(--usach-naranja);
+}
+
+.render-usach-dark .tarjeta-banco.seleccionado {
+    background: #0E3F3A;
+    border-color: var(--usach-verde);
+    box-shadow: 0 0 8px var(--usach-naranja);
+}
+
+/* Títulos de tarjeta */
+.render-usach-dark .tarjeta-banco h5 {
+    color: var(--dark-text);
+}
+
+.render-usach-dark .alternativa-correcta {
+    color: var(--usach-verde);
+}
+
+/* Modal */
+.render-usach-dark .modal-content {
+    background: var(--dark-bg);
+    border-color: var(--usach-naranja);
+    color: var(--dark-text);
+    box-shadow: 0 4px 20px var(--dark-shadow);
+}
+
+/* Editor de alternativas */
+.render-usach-dark .editor-interactivo label {
+    color: var(--dark-text);
+}
+
+.render-usach-dark .editor-interactivo input,
+.render-usach-dark .editor-interactivo textarea {
+    background: var(--dark-bg-light);
+    border-color: var(--dark-border);
+    color: var(--dark-text);
+}
+
+/* Scroll alternativas */
+.render-usach-dark .alternativas-scroll {
+    background: var(--dark-bg-light);
+    border-color: var(--dark-border);
+}
+
+/* Select */
+.render-usach-dark select {
+    background: var(--dark-bg-light);
+    border-color: var(--usach-naranja);
+    color: var(--dark-text);
+}
+
+.render-usach-dark select option {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.render-usach-dark select option:checked {
+    background: var(--usach-naranja);
+    color: var(--usach-blanco);
+}
