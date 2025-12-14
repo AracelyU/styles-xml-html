@@ -309,11 +309,13 @@
 Estructura general de slide
 ========================================================== */
 .reveal .slide-background-content {
+    background-color: #ffffff; /* fondo blanco */
     background-image: url("../templates/fondo01usach-fing.png");
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* mantiene el PNG completo */
 }
+
 
 
 .slide-section {
