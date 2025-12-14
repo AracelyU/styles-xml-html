@@ -311,26 +311,25 @@ Estructura general de slide
 .reveal .slide-background-content {
     width: 100%;
     height: 100%;
-
     background-color: #ffffff;
     background-image: url("../templates/fondo01usach-fing.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
+    background-size: contain;
 }
 
+
 @media (min-aspect-ratio: 16/9) {
-  .reveal .slide-background-content {
-    background-size: cover;
-  }
+    .reveal .slide-background-content {
+        background-size: cover;
+    }
 }
 
 @media (max-aspect-ratio: 16/9) {
-  .reveal .slide-background-content {
-    background-size: contain;
-  }
+    .reveal .slide-background-content {
+        background-size: contain;
+    }
 }
-
-
 
 
 .slide-section {
