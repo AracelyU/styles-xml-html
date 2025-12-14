@@ -316,24 +316,8 @@ Estructura general de slide
     background-repeat: no-repeat;
     background-position: center top; /* asegura que el logo quede visible */
     background-size: auto 100%;      /* ajusta la altura completa */
+    background-size: contain;
 }
-
-
-
-@media (orientation: portrait) {
-    .reveal .slide-background-content {
-        background-size: auto 100%;
-        background-position: center top;
-    }
-}
-
-@media (orientation: landscape) {
-    .reveal .slide-background-content {
-        background-size: contain;
-        background-position: center center;
-    }
-}
-
 
 
 .slide-section {
