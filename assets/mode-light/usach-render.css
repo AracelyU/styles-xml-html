@@ -319,15 +319,9 @@ Estructura general de slide
     background-size: contain;
 }
 
-/* Cuando la slide activa es un quiz */
-.reveal section.present[data-quiz] ~ .backgrounds .slide-background-content,
-.reveal section.present.reveal-quiz-question ~ .backgrounds .slide-background-content {
-    background-color: #ffffff;
-    background-image: url("../templates/fondo01usach-fing-sinlogo.png"); /* o fondo quiz */
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: auto 100%; 
-    background-size: contain;
+/* Fondo SOLO para quizzes */
+.reveal .slide-background.present[data-quiz] .slide-background-content {
+  background-image: url("../templates/fondo01usach-fing-sinlogo.png");
 }
 
 
