@@ -320,10 +320,10 @@ Estructura general de slide
 }
 
 /* Fondo SOLO para quizzes */
-.reveal .slide-background.quizz.reveal-quiz-question.present
-    .slide-background-content {
-    background-image: url("../templates/fondo01usach-fing-sinlogo.png");
+.reveal .slide-background.quizz.reveal-quiz-question.present .slide-background-content {
+    background-image: url("../templates/fondo01usach-fing-sinlogo.png") !important;
 }
+
 .slide-section {
     height: 100dvh;
 }
