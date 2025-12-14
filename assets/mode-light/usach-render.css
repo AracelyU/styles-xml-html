@@ -513,8 +513,9 @@ Header / título de slide
 }
 
 .region--centro {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 /* Elementos internos */
@@ -530,7 +531,7 @@ Header / título de slide
 .region__subtitulo,
 .region__lista,
 .region__tabla-descripcion {
-    width: 100%;
+    width: auto;
     text-align: inherit;
 }
 
