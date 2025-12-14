@@ -309,10 +309,12 @@
 Estructura general de slide
 ========================================================== */
 .reveal .slide-background-content {
-    background: var(--usach-blanco) url('../templates/fondo01usach-fing.png')
-                no-repeat top center !important;
-    background-size: cover !important;
+    background-image: url("../templates/fondo01usach-fing.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 .slide-section {
     height: 100dvh;
