@@ -536,10 +536,12 @@ Header / título de slide
 /* Elementos internos */
 .region__subtitulo {
     font-weight: bold;
+    color: var(--usach-naranja);
 }
 
 .region__texto {
     margin-bottom: 1em;
+    color: var(--usach-gris-claro);
 }
 
 .region__texto,
