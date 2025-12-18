@@ -44,17 +44,7 @@
 }
 
 .render-usach-dark Diapositiva[disposicion="interactivo-alternativas"] {
-    display: grid;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    padding: 2em 3em;
-    position: relative;
-    background: var(--usach-azul-gris) url('../templates/fondo01usach-fing-sinlogo.png') no-repeat center center;
-    background-size: cover;
-    border-radius: 1rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    overflow: hidden; /* Mantiene el tamaño total fijo */
+    background: var(--usach-azul-gris) url('../templates/fondo01usach-fing-sinlogo.png') no-repeat center;
 }
 
 /* Título */
