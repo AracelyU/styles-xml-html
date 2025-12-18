@@ -7,17 +7,7 @@
     --usach-negro: #222222;
     --usach-blanco: #FFFFFF;
 
-    /* ========================
-        PALETA MODO OSCURO
-       ======================== */
-    --dark-bg: #1E1E1E;
-    --dark-bg-light: #2A2A2A;
-    --dark-border: #3A3A3A;
-    --dark-text: #E5E5E5;
-    --dark-text-soft: #C8C8C8;
-    --dark-shadow: rgba(0,0,0,0.45);
 }
-
 
 /* === XML === */
 
@@ -45,7 +35,8 @@
     aspect-ratio: 16 / 9;
     padding: 2em 3em;
     position: relative;
-    background: var(--dark-bg-light);
+    background: var(--usach-azul-gris) url('../templates/fondo01usach-fing.png') no-repeat center center;
+    background-size: cover;
     border-radius: 1rem;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
@@ -60,7 +51,7 @@
     width: 100%;
     font-size: 1.8em;
     font-weight: bold;
-    color: var(--usach-verde);
+    color: var(--usach-blanco);
 }
 
 /* === Layouts por disposición === */
@@ -248,7 +239,7 @@
     font-size: 0.9em;
     white-space: pre-wrap;
     color: var(--usach-gris-claro);
-    background: var(--usach-azul-gris);
+    background: var(--usach-negro);
     border-left: 4px solid var(--usach-naranja);
     border-radius: 6px;
 }
@@ -285,7 +276,7 @@
     display: block;
     margin-top: 1em;
     font-style: italic;
-    color: var(--usach-verde);
+    color: var(--usach-naranja);
 }
 
 /* === Banco de preguntas === */
@@ -319,10 +310,20 @@
 /* ==========================================================
 Estructura general de slide
 ========================================================== */
-.reveal.slide-background-content {
+.reveal .slide-background-content {
+    width: 100%;
+    height: 100%;
     background-color: var(--usach-azul-gris);
-    background-image: none !important; /* elimina cualquier imagen previa */
-    background-size: cover !important;
+    background-image: url("../templates/fondo01usach-fing.png");
+    background-repeat: no-repeat;
+    background-position: center top; /* asegura que el logo quede visible */
+    background-size: auto 100%;      /* ajusta la altura completa */
+    background-size: contain;
+}
+
+/* Fondo SOLO para quizzes */
+.reveal .slide-background.quizz.reveal-quiz-question.present .slide-background-content {
+    background: var(--usach-azul-gris) url("../templates/fondo01usach-fing-sinlogo.png") !important;
 }
 
 
@@ -344,13 +345,13 @@ Header / título de slide
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--usach-verde);
+    color: var(--usach-blanco);
 }
 
 .reveal h1, 
 .reveal h2, 
 .reveal h3 {
-    color: var(--usach-verde) !important;
+    color: var(--usach-blanco) !important;
 }
 
 /* ---------------------------
@@ -552,13 +553,12 @@ Header / título de slide
 pre {
     padding: 1em 1.5em;
     margin: 1em 0;
-    background-color: var(--usach-azul-gris);
     overflow-x: auto;
 }
 
 /* Contenedor del bloque */
 .reveal pre {
-    background: var(--usach-azul-gris) !important;
+    background: var(--usach-negro) !important;
     border-left: 4px solid var(--usach-naranja);
     border-radius: 6px;
     padding: 1em 1.25em;
@@ -634,7 +634,7 @@ pre {
     border-collapse: collapse;
     font-size: calc(0.9vw + 0.9vh); /* Mantiene escala responsiva Reveal.js */
     color: var(--usach-gris-claro);
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: var(--usach-blanco);
     border: 1px solid var(--usach-gris-medio);
 }
 
@@ -642,7 +642,7 @@ pre {
 .reveal table.region__tabla td {
     padding: 0.6em 1.2em;
     border: 1px solid var(--usach-gris-medio);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--usach-blanco);
     max-width: 240px;
     word-wrap: break-word;
     vertical-align: middle;
@@ -653,7 +653,7 @@ pre {
     text-align: center;
     font-weight: bold;
     font-size: calc(1vw + 1vh);
-    color: var(--usach-verde);
+    color: var(--usach-blanco);
     margin: 0 0 0.6em 0;
 }
 
