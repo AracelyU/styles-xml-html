@@ -45,7 +45,11 @@
 
 /* diapositiva para quizz */
 .render-usach Diapositiva[disposicion="interactivo-alternativas"] {
-    background: var(--usach-blanco) url('../templates/fondo01usach-fing-sinlogo.png') no-repeat center center;
+    background-color: var(--usach-blanco);
+    background-image: url('../templates/fondo01usach-fing-sinlogo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 /* Título */
