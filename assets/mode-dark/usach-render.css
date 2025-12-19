@@ -43,8 +43,12 @@
     overflow: hidden; /* Mantiene el tamaño total fijo */
 }
 
-.render-usach-dark Diapositiva[disposicion="interactivo-alternativas"] {
-    background: var(--usach-azul-gris) url('../templates/fondo01usach-fing-sinlogo.png') no-repeat center;
+.render-usach Diapositiva[disposicion="interactivo-alternativas"] {
+    background-color: var(--usach-azul-gris);
+    background-image: url('../templates/fondo01usach-fing-sinlogo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 /* Título */
