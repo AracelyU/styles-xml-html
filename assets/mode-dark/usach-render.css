@@ -43,7 +43,7 @@
     overflow: hidden; /* Mantiene el tamaño total fijo */
 }
 
-.render-usach Diapositiva[disposicion="interactivo-alternativas"] {
+.render-usach-dark Diapositiva[disposicion="interactivo-alternativas"] {
     background-color: var(--usach-azul-gris);
     background-image: url('../templates/fondo01usach-fing-sinlogo.png');
     background-repeat: no-repeat;
