@@ -271,26 +271,23 @@
 }
 
 /* === Imágenes === */
-.render-usach img {
+.render-usach .img-wrapper {
+    text-align: center;
+    margin: 1em auto;
+}
+
+.render-usach .img-wrapper img {
     display: block;
     width: 60%;
-    margin: 1em auto;
-    z-index: 40;
+    margin: 0 auto;
 }
 
-.render-usach img[descripcion] {
-    display: block;
-    margin: 1em auto;
+.render-usach .img-descripcion {
+    margin-top: 0.4em;
+    font-size: 0.85em;
+    color: var(--usach-negro);
 }
 
-/* Creamos un elemento virtual usando outline trick */
-.render-usach img[descripcion] {
-    content: attr(descripcion);
-}
-
-.render-usach img[descripcion] {
-    text-align: center;
-}
 
 
 
