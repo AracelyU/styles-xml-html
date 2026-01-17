@@ -230,13 +230,38 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* === Título de la tabla === */
+.render-usach tabla[titulo]::before {
+    content: attr(titulo);
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: calc(1vw + 1vh);
+    color: var(--usach-verde);
+    margin: 0 0 0.6em 0;
+}
+
+/* === Descripción de la tabla === */
+.render-usach tabla[descripcion]::after {
+    content: attr(descripcion);
+    display: block;
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: calc(0.7vw + 0.7vh);
+    color: var(--usach-negro);
+    max-width: 90%;
+}
+
+
 /* === Imágenes === */
 .render-usach img {
     display: block;
     width: 60%;
     margin: 1em auto;
     z-index: 40;
+    color: var(--usach-negro);
 }
+
 
 /* === Código === */
 .render-usach codigo {
