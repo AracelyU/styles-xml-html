@@ -281,17 +281,17 @@
 .render-usach img[descripcion] {
     display: block;
     margin: 1em auto;
-    color: var(--usach-negro);
 }
 
-/* Usar el atributo como "caption" real */
+/* Creamos un elemento virtual usando outline trick */
+.render-usach img[descripcion] {
+    content: attr(descripcion);
+}
+
 .render-usach img[descripcion] {
     text-align: center;
 }
 
-.render-usach img[descripcion] + * {
-    display: none;
-}
 
 
 /* === Código === */
