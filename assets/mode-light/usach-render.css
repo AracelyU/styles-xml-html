@@ -236,9 +236,7 @@
     display: block;
     text-align: center;
     font-weight: bold;
-    font-size: calc(1vw + 1vh);
     color: var(--usach-verde);
-    margin: 0 0 0.6em 0;
 }
 
 /* === Descripción de la tabla === */
@@ -247,9 +245,7 @@
     display: block;
     margin-top: 0.5em;
     text-align: center;
-    font-size: calc(0.7vw + 0.7vh);
     color: var(--usach-negro);
-    max-width: 90%;
 }
 
 
@@ -259,6 +255,13 @@
     width: 60%;
     margin: 1em auto;
     z-index: 40;
+}
+
+.render-usach img[descripcion] {
+    content: attr(descripcion);
+    display: block;
+    margin-top: 0.5em;
+    text-align: center;
     color: var(--usach-negro);
 }
 
