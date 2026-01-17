@@ -279,11 +279,18 @@
 }
 
 .render-usach img[descripcion] {
-    content: attr(descripcion);
     display: block;
-    margin-top: 0.5em;
-    text-align: center;
+    margin: 1em auto;
     color: var(--usach-negro);
+}
+
+/* Usar el atributo como "caption" real */
+.render-usach img[descripcion] {
+    text-align: center;
+}
+
+.render-usach img[descripcion] + * {
+    display: none;
 }
 
 
