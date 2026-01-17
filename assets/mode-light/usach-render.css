@@ -215,16 +215,51 @@
 
 
 /* === Tablas === */
+/* Contenedor principal */
 .render-usach tabla {
-    display: table;
-    border-collapse: collapse;
-    margin: 0.5em auto;
+    display: block;              /* NO table */
+    margin: 1em auto;
+    width: fit-content;         /* que se ajuste al contenido */
     font-size: 0.9em;
     color: var(--usach-azul-gris);
+    text-align: center;         /* centra título y descripción */
 }
 
+/* Pseudo-elementos ahora sí se centran al contenedor completo */
+.render-usach tabla[titulo]::before {
+    content: attr(titulo);
+    display: block;
+    font-weight: bold;
+    color: var(--usach-verde);
+    margin-bottom: 0.5em;
+}
+
+.render-usach tabla[descripcion]::after {
+    content: attr(descripcion);
+    display: block;
+    margin-top: 0.5em;
+    color: var(--usach-negro);
+}
+
+/* AHORA recién definimos el comportamiento de tabla real */
+.render-usach tabla > fila:first-of-type {
+    display: table-header-group;
+}
+
+.render-usach tabla > fila {
+    display: table-row;
+}
+
+.render-usach tabla > fila > celda {
+    display: table-cell;
+    padding: 0.6em 1.2em;
+    border: 1px solid var(--usach-gris-medio);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Hacemos que las filas se comporten como una tabla interna */
 .render-usach tabla {
-    position: relative;
+    border-collapse: collapse;
 }
 
 .render-usach fila { display: table-row; }
@@ -234,29 +269,6 @@
     border: 1px solid var(--usach-gris-medio);
     background-color: rgba(255, 255, 255, 0.8);
 }
-
-/* === Título de la tabla === */
-.render-usach tabla[titulo]::before {
-    content: attr(titulo);
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    color: var(--usach-verde);
-    margin-bottom: 0.5em;
-    width: 100%;
-}
-
-/* === Descripción de la tabla === */
-.render-usach tabla[descripcion]::after {
-    content: attr(descripcion);
-    display: block;
-    margin-top: 0.5em;
-    text-align: center;
-    color: var(--usach-negro);
-    width: 100%;
-}
-
-
 
 /* === Imágenes === */
 .render-usach img {
